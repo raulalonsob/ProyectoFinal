@@ -1,22 +1,29 @@
 <template>
+  <div id=imagen><img alt="rueda" src="../assets/rueda.png" id="rueda"></div>
   <div class="home">
-   <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+   <Formulario msg="Introduzca los filtros"/>
   </div>
 </template>
 
 
 <script>
  
- import HelloWorld from '@/components/HelloWorld.vue'
+ import Formulario from '@/components/Formulario.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Formulario
   }
 }
 </script>
 <style scoped>
-
+ #imagen{
+  float: left;
+  width: 20%;
+}
+#rueda{
+  width: 80%
+}
 
 </style>

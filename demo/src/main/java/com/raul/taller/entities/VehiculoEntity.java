@@ -16,6 +16,9 @@ public class VehiculoEntity {
 	@Column(name = "modelo")
 	private String modelo;
 	
+	@Column(name = "id_users")
+	private Integer id_users;
+	
 	public VehiculoEntity() {
 		super();
 	
@@ -52,6 +55,5 @@ public class VehiculoEntity {
 		this.id_users = id_users;
 	}
 
-	@Column(name = "id_users")
-	private Integer id_users;
+
 }
