@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 import com.raul.taller.dtos.RuedaDTO;
 import com.raul.taller.entities.RuedaEntity;
 
-public interface RuedaRepository extends CrudRepository<RuedaEntity, Integer> {
+public interface RuedaRepository extends CrudRepository<RuedaEntity, String> {
 	@Query(value = "select new com.raul.taller.dtos.RuedaDTO (a.marca, a.anchura, a.perfil, a.llanta, a.carga, a.velocidad) "
 			+ "FROM com.raul.taller.entities.RuedaEntity a "
 			+ "WHERE (a.marca LIKE CONCAT('%',:marca,'%') or :marca is null) "

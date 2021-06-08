@@ -29,7 +29,7 @@ public class RuedaEntity {
 	private Integer llanta;
 	
 	@Column(name = "carga")
-	private String carga;
+	private Integer carga;
 	
 	@Column(name = "velocidad")
 	private String velocidad;
@@ -41,7 +41,7 @@ public class RuedaEntity {
 	private String stock;
 
 	public RuedaEntity(Integer id_ruedas, String marca, String modelo, Integer anchura, Integer perfil, Integer llanta,
-			String carga, String velocidad, String precio, String stock) {
+			Integer carga, String velocidad, String precio, String stock) {
 		super();
 		this.id_ruedas = id_ruedas;
 		this.marca = marca;
@@ -56,9 +56,9 @@ public class RuedaEntity {
 	}
 	
 	public RuedaEntity(String marca,Integer anchura, Integer perfil, Integer llanta,
-			String carga, String velocidad) {
+			Integer carga, String velocidad) {
 		super();
-		
+	
 		this.marca = marca;
 		this.anchura = anchura;
 		this.perfil = perfil;
@@ -119,11 +119,11 @@ public class RuedaEntity {
 		this.llanta = llanta;
 	}
 
-	public String getCarga() {
+	public Integer getCarga() {
 		return carga;
 	}
 
-	public void setCarga(String carga) {
+	public void setCarga(Integer carga) {
 		this.carga = carga;
 	}
 
