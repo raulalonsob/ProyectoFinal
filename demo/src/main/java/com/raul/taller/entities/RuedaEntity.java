@@ -55,17 +55,6 @@ public class RuedaEntity {
 		this.stock = stock;
 	}
 	
-	public RuedaEntity(String marca,Integer anchura, Integer perfil, Integer llanta,
-			Integer carga, String velocidad) {
-		super();
-	
-		this.marca = marca;
-		this.anchura = anchura;
-		this.perfil = perfil;
-		this.llanta = llanta;
-		this.carga = carga;
-		this.velocidad = velocidad;
-	}
 
 	public RuedaEntity() {
 		super();

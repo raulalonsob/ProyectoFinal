@@ -12,12 +12,12 @@ import com.raul.taller.entities.RuedaEntity;
 public interface RuedaRepository extends CrudRepository<RuedaEntity, String> {
 	@Query(value = "select new com.raul.taller.dtos.RuedaDTO (a.marca, a.anchura, a.perfil, a.llanta, a.carga, a.velocidad) "
 			+ "FROM com.raul.taller.entities.RuedaEntity a "
-			+ "WHERE (a.marca LIKE CONCAT('%',:marca,'%') or :marca is null) "
-			+ "AND (a.anchura LIKE CONCAT ('%',:anchura,'%') or :anchura is null) "
-			+ "AND (a.perfil LIKE CONCAT ('%',:perfil,'%' ) or :perfil is null )"
-			+ "AND (a.llanta LIKE CONCAT ('%',:llanta,'%') or :llanta is null )"
-			+ "AND (a.carga LIKE CONCAT ('%',:carga,'%') or :carga is null )"
-			+ "AND (a.velocidad LIKE CONCAT ('%',:velocidad,'%') or :velocidad is null )")
+			+ "WHERE (a.marca LIKE CONCAT('%',:marca, '%') or :marca is null) "
+			+ "AND (a.anchura = :anchura or :anchura is null) "
+			+ "AND (a.perfil = :perfil or :perfil is null )"
+			+ "AND (a.llanta = :llanta or :llanta is null )"
+			+ "AND (a.carga = :carga or :carga is null )"
+			+ "AND (a.velocidad LIKE CONCAT ('%',:velocidad, '%') or :velocidad is null )")
 			  List<RuedaDTO>obtenerRuedaFiltro(
 								
 								@Param("marca")	String marca,

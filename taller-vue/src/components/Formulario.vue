@@ -62,7 +62,16 @@ export default {
 
   methods: {
     mandar(){
-    axios.get("http://localhost:8080/taller/v1/ruedas/?marca="+this.busqueda.marca)
+    axios.get("http://localhost:8080/taller/v1/ruedas",{
+      marca: this.busqueda.marca,
+      anchura: this.busqueda.anchura,
+      perfil: this.busqueda.perfil,
+      llanta: this.busqueda.llanta,
+      carga: this.busqueda.carga,
+      velocidad: this.busqueda.velocidad
+
+    }
+    )
     .then(response => console.log(response));
     },
   },

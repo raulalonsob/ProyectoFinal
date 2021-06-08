@@ -31,7 +31,7 @@ public class RuedaRestController {
         return ruedaRepo.findAll();
     }
 	
-	@GetMapping(value = "/ruedas", params = {"marca", "anchura", "perfil", "llanta", "carga", "velocidad"})
+	@GetMapping(value = "/rueda", params = {"marca", "anchura", "perfil", "llanta", "carga", "velocidad"})
 	public List<RuedaDTO>obtenerRuedaFiltro(
 			@RequestParam(value = "marca", required = false) String marca,
 			@RequestParam(value ="anchura", required = false) Integer anchura,
