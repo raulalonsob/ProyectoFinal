@@ -1,6 +1,6 @@
 <template>
   <div id=imagen><img alt="rueda" src="../assets/rueda.png" id="rueda"></div>
-  <div class="home">
+  <div >
    <Formulario msg="Introduzca los filtros"/>
   </div>
 </template>

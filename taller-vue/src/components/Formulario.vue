@@ -4,35 +4,36 @@
     <form>
     <h2>Elige tus neumaticos:</h2>
    <label for="marca">Marca:</label>
-    <select id="marca" v-model="busqueda.marca">
-      <option v-for="(rueda,index) in ruedas" :key ="index" :value="busqueda.marca" >{{rueda.marca}}</option>
+    <select id="marca" v-model.lazy="busqueda.marca">
+      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.marca" >{{rueda.marca}}</option>
     </select>
     <br>
        <label for="anchura">Anchura</label>
-    <select id="anchura"  v-model="busqueda.anchura" >
-      <option v-for="(ruedas,index) in ruedas" :key ="index" :value="busqueda.anchura" >{{ruedas.anchura}}</option>
+    <select id="anchura" v-model.lazy="busqueda.anchura" >
+      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.anchura" >{{rueda.anchura}}</option>
     </select>
     <br>
        <label for="perfil">Perfil</label>
-    <select id="perfil" v-model="busqueda.perfil">
-      <option v-for="(ruedas,index) in ruedas" :key ="index" :value="busqueda.perfil" >{{ruedas.perfil}}</option>
+    <select id="perfil" v-model.lazy="busqueda.perfil">
+      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.perfil" >{{rueda.perfil}}</option>
     </select>
     <br>
        <label for="llanta">Llanta</label>
-    <select id="llanta" v-model="busqueda.llanta" >
-      <option v-for="(ruedas,index) in ruedas" :key ="index" :value="busqueda.llanta" >{{ruedas.llanta}}</option>
+    <select id="llanta" v-model.lazy="busqueda.llanta" >
+      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.llanta" >{{rueda.llanta}}</option>
     </select>
     <br>
      <label for="carga">Carga</label>
-    <select id="carga" v-model="busqueda.carga">
-      <option v-for="(ruedas,index) in ruedas" :key ="index" :value="busqueda.carga" >{{ruedas.carga}}</option>
+    <select id="carga" v-model.lazy="busqueda.carga">
+      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.carga" >{{rueda.carga}}</option>
     </select>
       <br>
       <label for="velocidad">Velocidad</label>
-    <select id="velocidad" v-model="busqueda.velocidad" >
-      <option v-for="(ruedas,index) in ruedas" :key ="index" :value="busqueda.velocidad" >{{ruedas.velocidad}}</option>
+    <select id="velocidad" v-model.lazy="busqueda.velocidad" >
+      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.velocidad" >{{rueda.velocidad}}</option>
     </select>
     <br>
+     <input type="button" class="boton" @click="mandar" value="Buscar">
     </form>
   </div>
 </template>
@@ -60,7 +61,10 @@ export default {
   },
 
   methods: {
-    
+    mandar(){
+    axios.get("http://localhost:8080/taller/v1/ruedas/?marca="+this.busqueda.marca)
+    .then(response => console.log(response));
+    },
   },
   created() {
     axios.get("http://localhost:8080/taller/v1/ruedas")
@@ -81,23 +85,14 @@ form{
 	background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
   
 }
-#sinput{
-  width:180px;
-  font-size: 15px;
-	padding:3px 10px;
-	border:1px solid #f6f6f6;
-	border-radius:3px;
-	background-color:#f6f6f6;
-	margin:8px 0;
-	display:inline-block;
-}
+
 form label{
 	width:150px;
 	font-weight:bold;
 	display:inline-block;
 }
 form select{
-	width:200px;
+	width:150px;
 	padding:3px 10px;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
@@ -106,24 +101,6 @@ form select{
 	display:inline-block;
 }
 
-form input[type="text"]{
-	width:180px;
-	padding:3px 10px;
-	border:1px solid #f6f6f6;
-	border-radius:3px;
-	background-color:#f6f6f6;
-	margin:8px 0;
-	display:inline-block;
-}
-form input[type="number"]{
-  width:50px;
-	padding:3px 10px;
-	border:1px solid #f6f6f6;
-	border-radius:3px;
-	background-color:#f6f6f6;
-	margin:8px 0;
-	display:inline-block;
-}
 form input[type="button"]{
   margin-top: 5%;
   margin-left: 30%;
