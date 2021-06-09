@@ -39,7 +39,7 @@
     </form>
   </div>
   <div id="resultado" v-show="busqueda">
-    <RuedasSelec :filtro="ruedasFiltro" :mostrar="true"/>
+    <RuedasSelec :filtro="ruedasFiltro" />
   </div>
   </div>
 </template>
@@ -102,6 +102,7 @@ export default {
   float: left;
   margin-right: 5%;
   margin-bottom:5% ;
+  height: 600px;
 
 }
 #home{
@@ -110,8 +111,15 @@ export default {
 }
 #resultado{
   float: left;
-  min-width: 250px;
+  min-width: 500px;
+  height: 600px;
+  overflow-x:hidden ;
+  overflow-y:auto;
+	border-radius:10px;
+  padding-left: 2%;
 
+background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
+  
 
 }
  #imagen{
@@ -123,6 +131,7 @@ export default {
   width: 80%
 }
 form{
+  height: 560px;
 	width:500px;
 	padding:16px;
 	border-radius:10px;

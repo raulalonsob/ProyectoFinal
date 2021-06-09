@@ -1,27 +1,45 @@
 <template>
-
+<div>
+    <h1>Resultado de Busqueda:</h1><hr>
   <div class="datos" v-if="rueda.length>0">
-    <h1>Listado Busqueda:</h1>
-    <div v-for="(rod,index) in rueda" :key="index">
-    <ul>
-      <li> Marca: {{rod.marca}}</li>
-      <li> Anchura {{rod.anchura}}</li>
-      <li> Perfil: {{rod.perfil}}</li>
-      <li> Llanta: {{rod.llanta}}</li>
-      <li> Carga: {{rod.carga}}</li>
-      <li> Velocidad: {{rod.velocidad}}</li>
-      <li> Precio: {{rod.precio}}€</li>
-
-    </ul>
     
-    <form>
-        <input type="button" class="boton" id="borrar" value="Añadir a la cesta" @click="borrarJugador(jugador.id)">
-    </form>
-    <hr>
-    </div>
+    <div  v-for="(rod,index) in rueda" :key="index">
+        <div class="lista">
+        <ul >
+        <li> Marca: {{rod.marca}}</li>
+        <li> Anchura: {{rod.anchura}}</li>
+        <li> Perfil: {{rod.perfil}}</li>
+        <li> Llanta: {{rod.llanta}}</li>
+        <li> Carga: {{rod.carga}}</li>
+        <li> Velocidad: {{rod.velocidad}}</li>
+        <li> Precio: {{rod.precio}}€</li>
 
+        </ul>
+        </div>
 
-  </div>
+        <div class="imagen" v-if="rod.marca=='Michelin'">
+            <img  class="logo" src="../assets/Michelin.png">
+        </div>
+        <div class="imagen" v-if="rod.marca=='Dunlop'">
+            <img  class="logo" src="../assets/Dunlop1.png">
+        </div>
+        <div class="imagen" v-if="rod.marca=='Continental'">
+            <img  class="logo" src="../assets/Continental.png">
+        </div>
+        <div class="imagen" v-if="rod.marca=='Pirelli'">
+            <img  class="logo" src="../assets/Pirelli.png">
+        </div>
+
+        <form>
+            <input type="button" class="boton" id="borrar" value="Añadir a la cesta" @click="borrarJugador(jugador.id)">
+        </form>
+        
+    
+   <hr>
+    </div><br>
+
+    
+  </div><spam v-else><h3>El no tiene jugadores</h3></spam></div>
 </template>
 
 <script>
@@ -47,19 +65,28 @@ export default {
 }
 </script>
 <style >
+.logo{
+    height: 160px;
+}
+.lista{
+    float: left;
+    width: 29%;
+}
+.imagen{
+    float: left;
+    width: 49%;
+}
+
 .datos{
 
   font-weight: 50px;  
       
-  width: 130%;
+  width: 150%;
   text-align: left;  
 	padding-top: 20px;
     padding-left: 2%;
   padding-bottom: 20px;
-	border-radius:10px;
 
-	background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
-  
 }
 input[type="number"]{
   width: 50px;
