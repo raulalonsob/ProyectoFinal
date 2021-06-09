@@ -1,41 +1,6 @@
 <template>
  
-  <div class="formulario">
-    <form>
-    <h2>Elige tus neumaticos:</h2>
-   <label for="marca">Marca:</label>
-    <select id="marca" v-model.lazy="busqueda.marca">
-      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.marca" >{{rueda.marca}}</option>
-    </select>
-    <br>
-       <label for="anchura">Anchura</label>
-    <select id="anchura" v-model.lazy="busqueda.anchura" >
-      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.anchura" >{{rueda.anchura}}</option>
-    </select>
-    <br>
-       <label for="perfil">Perfil</label>
-    <select id="perfil" v-model.lazy="busqueda.perfil">
-      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.perfil" >{{rueda.perfil}}</option>
-    </select>
-    <br>
-       <label for="llanta">Llanta</label>
-    <select id="llanta" v-model.lazy="busqueda.llanta" >
-      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.llanta" >{{rueda.llanta}}</option>
-    </select>
-    <br>
-     <label for="carga">Carga</label>
-    <select id="carga" v-model.lazy="busqueda.carga">
-      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.carga" >{{rueda.carga}}</option>
-    </select>
-      <br>
-      <label for="velocidad">Velocidad</label>
-    <select id="velocidad" v-model.lazy="busqueda.velocidad" >
-      <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.velocidad" >{{rueda.velocidad}}</option>
-    </select>
-    <br>
-     <input type="button" class="boton" @click="mandar" value="Buscar">
-    </form>
-  </div>
+  
 </template>
 
 <script>
@@ -63,16 +28,19 @@ export default {
   methods: {
     mandar(){
     axios.get("http://localhost:8080/taller/v1/ruedas",{
-      marca: this.busqueda.marca,
-      anchura: this.busqueda.anchura,
-      perfil: this.busqueda.perfil,
-      llanta: this.busqueda.llanta,
-      carga: this.busqueda.carga,
-      velocidad: this.busqueda.velocidad
-
+      params: this.busqueda
     }
     )
     .then(response => console.log(response));
+    },
+    limpiar(){
+        this.busqueda.marca = "",
+        this.busqueda.anchura="",
+        this.busqueda.perfil= "",
+        this.busqueda.llanta= "",
+        this.busqueda.carga= "",
+        this.busqueda.velocidad=""
+
     },
   },
   created() {

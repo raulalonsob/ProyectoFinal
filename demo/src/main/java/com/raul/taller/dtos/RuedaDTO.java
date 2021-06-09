@@ -18,14 +18,16 @@ public class RuedaDTO {
 	
 	
 	
-	public RuedaDTO(String marca, Integer anchura, Integer perfil, Integer llanta, Integer carga, String velocidad) {
+	public RuedaDTO(String marca, String modelo, Integer anchura, Integer perfil, Integer llanta, Integer carga, String velocidad, String precio) {
 		super();
 		this.marca = marca;
+		this.modelo = modelo;
 		this.anchura = anchura;
 		this.perfil = perfil;
 		this.llanta = llanta;
 		this.carga = carga;
 		this.velocidad = velocidad;
+		this.precio= precio;
 	}
 	public RuedaDTO() {
 		super();
