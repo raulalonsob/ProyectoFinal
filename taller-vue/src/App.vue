@@ -1,8 +1,8 @@
 <template>
- <div id=container>
-    <div id="header">
-      <div id="header2">TireWheels</div>
-      <div id="nav">
+ <div  id=container>
+    <div class="row" id="header">
+      <div class="col-md-5 col-lg-6" >TireWheels</div>
+      <div class="col-md-6 col-md-5 d-flex justify-content-around" id="nav">
         <router-link class="router" to="/">Inicio</router-link> 
         <router-link class="router" to="/presentacion">Quienes somos </router-link>
         <router-link class="router" to="/cuenta">Mi cuenta</router-link>
@@ -15,12 +15,19 @@
   <div id="vistas">
     <router-view/>
   </div>
+  <div class="d-flex align-items-end">
+    <Footer/>
+  </div>
   
   </div>
 </template>
 <script>
+import Footer from "./components/Footer.vue"
 import axios from "axios";
 export default {
+    components: {
+    Footer
+    },
   created() {
     axios.get("http://localhost:8080/taller/v1/vehiculos").then((result) => {
       console.log(result.data);
@@ -41,6 +48,7 @@ export default {
 
 #vistas{
   padding-top: 25px;
+
 }
 #nav a {
   font-weight: bold;
@@ -53,7 +61,7 @@ export default {
 }
 
 #header{
-  height: 100px;
+  height: auto;
   background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
   padding: 1em;
   margin-bottom: 10px;
@@ -74,8 +82,6 @@ export default {
 
 #nav {
   padding-top: 4%;
-  width: 50%;
-  float: right;
   text-align: right;
   font-size:large;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

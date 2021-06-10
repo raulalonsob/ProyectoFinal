@@ -3,8 +3,8 @@
     <h1>Resultado de Busqueda:</h1><hr>
   <div class="datos" v-if="rueda.length>0">
     
-    <div  v-for="(rod,index) in rueda" :key="index">
-        <div class="lista">
+    <div class="row d-flex justify-content-start"  v-for="(rod,index) in rueda" :key="index">
+        <div class="col-3">
         <ul >
         <li> Marca: {{rod.marca}}</li>
         <li> Anchura: {{rod.anchura}}</li>
@@ -17,16 +17,16 @@
         </ul>
         </div>
 
-        <div class="imagen" v-if="rod.marca=='Michelin'">
+        <div class="imagen col-4" v-if="rod.marca=='Michelin'">
             <img  class="logo" src="../assets/Michelin.png">
         </div>
-        <div class="imagen" v-if="rod.marca=='Dunlop'">
+        <div class="imagen col-4" v-if="rod.marca=='Dunlop'">
             <img  class="logo" src="../assets/Dunlop1.png">
         </div>
-        <div class="imagen" v-if="rod.marca=='Continental'">
+        <div class="imagen col-4" v-if="rod.marca=='Continental'">
             <img  class="logo" src="../assets/Continental.png">
         </div>
-        <div class="imagen" v-if="rod.marca=='Pirelli'">
+        <div class="imagen col-4" v-if="rod.marca=='Pirelli'">
             <img  class="logo" src="../assets/Pirelli.png">
         </div>
 
@@ -68,14 +68,6 @@ export default {
 .logo{
     height: 160px;
 }
-.lista{
-    float: left;
-    width: 29%;
-}
-.imagen{
-    float: left;
-    width: 49%;
-}
 
 .datos{
 
@@ -105,6 +97,7 @@ input[type="number"]{
   background-color: #395766;
   border-radius: 6px;
   border: 2px solid #253b4d;
+  margin-bottom: 1%;
 }
 .boton:hover{
   color:#0a6897;
