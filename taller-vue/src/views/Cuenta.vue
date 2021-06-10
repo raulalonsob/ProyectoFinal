@@ -13,8 +13,8 @@
         <input type="button" class="btn btn-lg btn-primary btn-block" value="Cerrar Sesión" @click="cerrar">	
 	</form>
     <div v-if="perfil.length==1" class="col-6">
-        <h1>Zona Cliente:</h1><br>
-        {{perfil}}
+        
+        <Cliente :usuario="usuar"/>
     </div>
 
 
@@ -24,6 +24,7 @@
 </div>
 </template>
 <script>
+import Cliente from "../components/Cliente.vue"
 import axios from "axios"
 export default {
   name: 'Cuenta',
@@ -31,6 +32,7 @@ export default {
   data(){
   return{
       perfil:[2,2],
+      usuar:"",
       usuario:{
         username: "",
         password: "",
@@ -38,17 +40,21 @@ export default {
       },
   } 
   },
+  components: {
+    Cliente
+    },
     methods: {
     mandar(){
         axios.get("http://localhost:8080/taller/v1/users",{
         params: this.usuario
         }
         )
-        .then(response => (this.perfil=response.data)// this.perfil= response.data
+        .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].id_users)// this.perfil= response.data
         );
     },
     cerrar(){
-        this.perfil=[2,2]
+        this.perfil=[2,2],
+        this.usuar=""
     }
     }
 
@@ -91,7 +97,7 @@ body {
     background-repeat:repeat;
   }
   .form-signin {
-    max-width: 300px;
+    max-width: 320px;
     padding: 15px;
     margin: 0 auto;
       margin-top:50px;
