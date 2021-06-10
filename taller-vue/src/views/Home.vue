@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-content-around">
+  <div class="row justify-content-around" id="vista">
     <div class="align-items-center d-md-none d-xl-block col-lg-2  " id=imagen><img alt="rueda" src="../assets/rueda.png" id="rueda"></div>
  
     <div class="d-flex justify-content-around col-md-12 col-lg-3">
@@ -103,7 +103,9 @@ export default {
 </script>
 <style scoped>
 
-
+#vista{
+  background-color: #dee0e0;
+}
 
 #resultado{
   margin-left: 30px;
@@ -125,6 +127,7 @@ background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
 }
 form{
   min-width: 400px;
+  height: 500px;
 	padding-right: 50px;
 	padding:16px;
 	border-radius:10px;

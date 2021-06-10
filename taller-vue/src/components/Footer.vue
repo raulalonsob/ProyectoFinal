@@ -1,41 +1,115 @@
 <template>
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <footer>
-                    <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal" class="enlace">Aviso legal </a>|
-                    <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal" class="enlace">Política de privacidad </a>|
-                    <a href="http://www.interior.gob.es/politica-de-cookies" class="enlace">Política de cookies </a>
+	<section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				
+					<h5>Quick links</h5>
+					<ul class="d-flex justify-content-around">
+						<a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Home</a>
+						<a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>About</a>
+						<a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>FAQ</a>
+						<a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Get Started</a>
+						<a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Videos</a>
+					</ul>
+			
 
-                </footer>
-            </div>
-        </div>
-    </div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-facebook"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-google-plus"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02" target="_blank"><i class="fa fa-envelope"></i></a></li>
+					</ul>
+				</div>
+				<hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					<p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
+					<p class="h6">© All right Reversed.<a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank">Sunlimetech</a></p>
+				</div>
+				<hr>
+			</div>	
+		</div>
+	</section>
 </template>
 
 <style scoped>
-/*FOOTER*/
-.footer{
-border-radius: 20px;
-    color: white;
-    background-color: rgb(45, 46, 46);
-    margin-bottom: 15px;
-     
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 30px 0;
 }
-.container{
-    margin-top: 10%;
-}
-.enlace{
-    text-decoration:none;
-}
-.iconos .icon {
-    width: 60px;
-    height: 60px;
-    padding: 6px 0px;
-    border-radius: 30px;
+
+section .section-title {
     text-align: center;
-    line-height: 1.42857;
-    color: honeydew;
+    color: #1f1e1e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #5e5d5d !important;
+}
+#footer h5{
+	padding-left: 10px;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
 }
 
 </style>

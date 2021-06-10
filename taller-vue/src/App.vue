@@ -12,10 +12,10 @@
    
 
    
-  <div id="vistas">
+  <div class="col align-self-stetch" id="vistas">
     <router-view/>
   </div>
-  <div class="d-flex align-items-end">
+  <div class="col align-self-end">
     <Footer/>
   </div>
   
