@@ -157,7 +157,7 @@ CREATE TABLE `users` (
   `direccion` varchar(100) DEFAULT NULL,
   `domicilio` varchar(100) DEFAULT NULL,
   `numero_ruedas` int NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_users`,`username`),
+  PRIMARY KEY (`id_users`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `id_users_UNIQUE` (`id_users`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
