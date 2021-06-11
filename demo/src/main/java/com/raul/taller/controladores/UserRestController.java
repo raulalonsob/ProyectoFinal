@@ -26,6 +26,7 @@ public class UserRestController {
 	@Autowired 
 	private UserDAO userDAO;
 	
+	// Obtener usuario por usuario y contraseña
 	@GetMapping(value = "/users", params = {"username","password"})
 	public List<UserDTO>obtenerUser(
 			@RequestParam(value = "username") String username,

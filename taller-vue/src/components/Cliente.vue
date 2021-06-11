@@ -1,13 +1,12 @@
 <template>
+<h1>Tus vehículos:</h1>
 <div class="row d-flex justify-content-start" id="resultado"  v-for="(coche,index) in vehiculos" :key="index">
         <ul class="col-3">
-        <h4>{{coche.modelo}}</h4>
+        <h3>{{coche.modelo}}</h3>
         <h5>{{coche.matricula}}</h5>
         </ul>
-      
-
         <form class="col-5">
-            <input type="button" class="boton" id="borrar" value="Historial" @click="borrarJugador(jugador.id)">
+            <input type="button" class="boton" id="borrar" value="Historial" @click="mandarMatricula(coche.matricula)">
         </form>
 </div>
 </template>
@@ -21,6 +20,11 @@ export default {
         vehiculos:[],
 
     }
+  },methods:{
+    mandarMatricula(matricula){
+      console.log(matricula);
+    }
+
   },
     created() {
     
@@ -36,10 +40,10 @@ export default {
 </script>
 <style scoped>
 #resultado{
-  margin-left: 30px;
+  
   padding-top: 1%;
   margin-top: 1%;
-    border-radius:10px;
+  border-radius:10px;
   padding-left: 1%;
   margin-bottom: 5%;
   min-width: 300px;

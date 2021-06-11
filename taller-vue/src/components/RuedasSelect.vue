@@ -39,7 +39,7 @@
     </div><br>
 
     
-  </div><spam v-else><h3>El no tiene jugadores</h3></spam></div>
+  </div><spam v-else><h3>No hay resultados con esas caracteristicas</h3></spam></div>
 </template>
 
 <script>

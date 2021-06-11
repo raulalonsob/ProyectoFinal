@@ -13,8 +13,7 @@
         <input type="button" class="btn btn-lg btn-primary btn-block" value="Cerrar Sesión" @click="cerrar">	
 	</form>
     <div v-if="perfil.length==1" class="col-md-4 col-sm-12">
-        
-        <Cliente :usuario="usuar"/>
+          <Cliente :usuario="usuar"/>
     </div>
 
 
