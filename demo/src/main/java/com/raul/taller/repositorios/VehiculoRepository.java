@@ -13,7 +13,7 @@ import com.raul.taller.entities.VehiculoEntity;
 
 @Repository
 public interface VehiculoRepository extends CrudRepository<VehiculoEntity, String> {
-	@Query (value="select new com.raul.taller.dtos.VehiculoDTO (a. matricula, a.modelo, a.id_users) "
+	@Query (value="select new com.raul.taller.dtos.VehiculoDTO (a.matricula, a.modelo, a.id_users) "
 			+ "FROM com.raul.taller.entities.VehiculoEntity a "
 			+ "WHERE (a.id_users = :id_users) ")
 			

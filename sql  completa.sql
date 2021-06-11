@@ -86,7 +86,7 @@ CREATE TABLE `mantenimientos` (
   `fecha` date NOT NULL,
   `kilometros` int NOT NULL,
   `cantidad_ruedas` int NOT NULL,
-  `posición_rueda` varchar(10) DEFAULT NULL,
+  `posicion_rueda` varchar(10) DEFAULT NULL,
   `id_ruedas` int NOT NULL,
   PRIMARY KEY (`id_mantenimientos`),
   KEY `fk_mantenimientos_vehiculos1_idx` (`matricula`),

@@ -23,7 +23,6 @@ public class RuedaDAOImpl implements RuedaDAO{
 			Integer carga, String velocidad) {
 		// TODO Auto-generated method stub
 		return ruedaRepos.obtenerRuedaFiltro(marca, anchura, perfil, llanta, carga, velocidad);
-	//return ruedaRepos.obtenerRuedaFiltro(marca, anchura);
 	}
 
 	
