@@ -2,11 +2,12 @@
 <h1>Mantenimientos:</h1>{{matricula}}
 
 <div class="row d-flex justify-content-start" id="resultado"  v-for="(mant,index) in mantenimientos" :key="index">
-        <ul class="col-3">
-        <h3>{{mant.modelo}}</h3>
-        <h5>{{mant.matricula}}</h5>
+        <ul class="col-12">
+        <li>Fecha: {{mant.fecha}}</li>
+        <li>Posición: {{mant.posicion_rueda}}</li>
+        <li></li>
         </ul>
-        <form class="col-5">
+        <form >
             <input type="button" class="boton" id="borrar" value="Ver factura" @click="mandarMatricula(coche.matricula)">
         </form>
 </div>
@@ -23,26 +24,30 @@ export default {
     data(){
     return{
         mantenimientos:[],
-        matri:""
 
     }
-  },methods:{
-    mandarMatricula(matricula){
-      console.log(matricula);
-    }
-
-  },
-    created() {
-    console.log(this.mantenimiento)
-   /** axios.get("http://localhost:8080/taller/v1/vehiculos?id_users="+this.usuario)
+  },    
+  created() {
+    axios.get("http://localhost:8080/taller/v1/mantenimiento?matricula="+this.matricula)
         .then((response) => {
-      this.vehiculos=response.data
-    })*/ 
+      this.mantenimientos=response.data
+      console.log(this.mantenimientos)}
+  
+        )
+
   },
+
   watch:{
-      matricula(n){
-          this.matri=n
-      }
+
+      matricula(matri){
+      axios.get("http://localhost:8080/taller/v1/mantenimiento?matricula="+matri)
+        .then((response) => {
+      this.mantenimientos=response.data
+      console.log(this.mantenimientos)}
+  
+        )
+      },
+
   },
 
   props:['matricula'],
@@ -55,14 +60,14 @@ export default {
   padding-top: 1%;
   margin-top: 1%;
   border-radius:10px;
-  padding-left: 1%;
+  padding-left: 20px;
   margin-bottom: 5%;
   min-width: 300px;
 
 background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
 }
 .boton{
-    margin-top:10% ;
+    margin-bottom:15px;
 
 }
 </style>
