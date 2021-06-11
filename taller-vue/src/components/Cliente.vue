@@ -10,15 +10,23 @@ export default {
   name: 'Cliente',
     data(){
     return{
-        rueda:[]
+        user:"1"
+
+
     }
   },
-
-  methods: {
-  },
-  props:['usuario'],
-
+    created() {
     
+    axios.get("http://localhost:8080/taller/v1/vehiculos?id_users="+this.usuario,{
+
+        } )
+        .then((result) => {
+      console.log(result.data);
+    })
+  },
+  methods: {
+},
+  props:['usuario'],
 
 }
 </script>

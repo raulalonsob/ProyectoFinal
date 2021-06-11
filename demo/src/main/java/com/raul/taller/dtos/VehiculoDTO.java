@@ -1,63 +1,46 @@
-package com.raul.taller.entities;
+package com.raul.taller.dtos;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "vehiculos")
-public class VehiculoEntity {
+public class VehiculoDTO {
 
-	@Id
-	@Column(name = "matricula")
 	private String matricula;
-	
-	@Column(name = "modelo")
 	private String modelo;
-	
-	@Column(name = "id_users")
 	private Integer id_users;
 	
-	public VehiculoEntity() {
+	public VehiculoDTO( Integer id_users) {
+		
 		super();
-	
+		this.id_users= id_users;
 	}
 	
-	public VehiculoEntity(String matricula, String modelo, Integer id_users) {
+	public VehiculoDTO() {
+		super();
+	}
+	public VehiculoDTO(String matricula, String modelo, Integer id_users) {
 		super();
 		this.matricula = matricula;
 		this.modelo = modelo;
 		this.id_users = id_users;
 	}
-	public VehiculoEntity(Integer id_users) {
-		super();
-		this.id_users = id_users;
-	}
-
 	public String getMatricula() {
 		return matricula;
 	}
-
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-
 	public String getModelo() {
 		return modelo;
 	}
-
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
-
 	public Integer getId_users() {
 		return id_users;
 	}
-
 	public void setId_users(Integer id_users) {
 		this.id_users = id_users;
 	}
-
-
+	
 }
