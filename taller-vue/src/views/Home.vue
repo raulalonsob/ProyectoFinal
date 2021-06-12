@@ -103,9 +103,7 @@ export default {
 </script>
 <style scoped>
 
-#vista{
-  background-color: #dee0e0;
-}
+
 
 #resultado{
   margin-left: 30px;

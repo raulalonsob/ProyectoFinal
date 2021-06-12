@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.raul.taller.daos.MantenimientoDAO;
 import com.raul.taller.dtos.MantenimientoDTO;
+import com.raul.taller.dtos.MantenimientoRequestDTO;
 import com.raul.taller.dtos.RuedaDTO;
 import com.raul.taller.repositorios.MantenimientoRepository;
 
@@ -18,7 +19,7 @@ public class MantenimientoDAOImpl implements MantenimientoDAO {
 	
 	
 	@Override
-	public List<MantenimientoDTO> obtenerMantenimiento(String matricula) {
+	public List<MantenimientoRequestDTO> obtenerMantenimiento(String matricula) {
 		
 		return mantRepo.obtenerMantenimiento(matricula);
 	}

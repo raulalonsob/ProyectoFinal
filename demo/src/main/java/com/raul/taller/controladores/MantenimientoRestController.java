@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.raul.taller.dtos.MantenimientoDTO;
+import com.raul.taller.dtos.MantenimientoRequestDTO;
 import com.raul.taller.repositorios.MantenimientoRepository;
 
 
@@ -24,7 +25,7 @@ public class MantenimientoRestController {
 
 	
 	@GetMapping(value= "/mantenimiento", params={"matricula"})
-    public List<MantenimientoDTO> obtenerMantenimiento(
+    public List<MantenimientoRequestDTO> obtenerMantenimiento(
     		@RequestParam(value="matricula") String matricula){
         return mantRepo.obtenerMantenimiento(matricula);
     }

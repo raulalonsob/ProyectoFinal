@@ -1,21 +1,21 @@
 <template>
- <div  id=container>
-    <div class="row" id="header">
+ <div  id=container class="row">
+    <div class="row col-12" id="header">
       <div class="col-md-5 col-lg-6" >TireWheels</div>
-      <div class="col-md-6 col-md-5 d-flex justify-content-around" id="nav">
+      <div class="col-md-6 col-md-5 d-flex justify-content-around  align-self-end" id="nav">
         <router-link class="router" to="/">Inicio</router-link> 
-        <router-link class="router" to="/presentacion">Quienes somos </router-link>
+        <router-link class="router" to="/presentacion">¿Quiénes somos? </router-link>
         <router-link class="router" to="/cuenta">Mi cuenta</router-link>
-        <router-link class="router" to="/gestion">Gestion Taller</router-link>
+        <router-link class="router" to="/gestion">Gestión Taller</router-link>
       </div>
     </div>
    
 
    
-  <div class="col align-self-stetch" id="vistas">
+  <div class="col-12 d-flex justify-content-around" id="vistas">
     <router-view/>
   </div>
-  <div class="col align-self-end">
+  <div class="col-12 align-self-end" id="footer">
     <Footer/>
   </div>
   
@@ -45,6 +45,10 @@ export default {
   color: #2c3e50;
 }
 
+#container{
+
+  height: 99vh; 
+}
 
 #vistas{
   padding-top: 25px;
@@ -61,22 +65,15 @@ export default {
 }
 
 #header{
+  padding-left:50px ;
   height: auto;
   background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
-  padding: 1em;
-  margin-bottom: 10px;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 55px;
-  padding: 10px;
+
+
 }
-#header2{
-  float: left;
-  width: 40%;
-  padding-top: 1%;
-}
-.router{
-  margin-right: 25px;
-}
+
 
 
 
@@ -87,7 +84,6 @@ export default {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   line-height: 30px;
   
-  min-width: 140px;
  /* border: solid 1px red;*/
 }
 </style>

@@ -5,7 +5,8 @@
         <ul class="col-12">
         <li>Fecha: {{mant.fecha}}</li>
         <li>Posición: {{mant.posicion_rueda}}</li>
-        <li></li>
+        <li>Kilómetros: {{mant.kilometros}} km</li>
+        <li>Rueda: {{mant.marca}} {{mant.modelo}}</li>
         </ul>
         <form >
             <input type="button" class="boton" id="borrar" value="Ver factura" @click="mandarMatricula(coche.matricula)">
