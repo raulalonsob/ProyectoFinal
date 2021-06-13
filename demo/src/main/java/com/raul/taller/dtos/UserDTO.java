@@ -7,7 +7,7 @@ public class UserDTO {
 	private Integer id_users;
 	private String username;
 	private String password;
-	private Integer enabled;
+	private Integer trabajador;
 	private String nombre;
 	private String apellidos;
 	private String dni;
@@ -30,13 +30,13 @@ public class UserDTO {
 	public UserDTO() {
 		super();
 	}
-	public UserDTO(Integer id_users, String username, String password, Integer enabled, String nombre, String apellidos,
+	public UserDTO(Integer id_users, String username, String password, Integer trabajador, String nombre, String apellidos,
 			String dni, String email, String direccion, String domicilio, Integer numero_ruedas) {
 		super();
 		this.id_users = id_users;
 		this.username = username;
 		this.password = password;
-		this.enabled = enabled;
+		this.trabajador = trabajador;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
@@ -63,11 +63,11 @@ public class UserDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Integer getEnabled() {
-		return enabled;
+	public Integer getTrabajador() {
+		return trabajador;
 	}
-	public void setEnabled(Integer enabled) {
-		this.enabled = enabled;
+	public void setTrabajador(Integer trabajador) {
+		this.trabajador = trabajador;
 	}
 	public String getNombre() {
 		return nombre;

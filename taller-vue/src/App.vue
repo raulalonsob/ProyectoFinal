@@ -8,9 +8,9 @@
         <router-link class="router" to="/cuenta">Mi cuenta</router-link>
         <router-link class="router" to="/gestion">Gestión Taller</router-link>
       </div>
-    </div>
+ 
    
-
+   </div>
    
   <div class="col-12 d-flex justify-content-around" id="vistas">
     <router-view/>

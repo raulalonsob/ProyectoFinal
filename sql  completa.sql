@@ -149,7 +149,7 @@ CREATE TABLE `users` (
   `id_users` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `enabled` tinyint NOT NULL DEFAULT '1',
+  `trabajador` tinyint NOT NULL DEFAULT '0',
   `nombre` varchar(50) NOT NULL,
   `apellidos` varchar(100) NOT NULL,
   `dni` varchar(10) DEFAULT NULL,
@@ -169,7 +169,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'raul','123',1,'raul','alo','78787878X','alo@alo','nolahay','sala',0),(2,'marcos','456',1,'marcos','becerro','12121212B','ma@be','nolase','madrid',0),(3,'pedrolito','hola',1,'pedro','guti',NULL,NULL,NULL,NULL,0);
+INSERT INTO `users` VALUES (1,'raul','123',1,'raul','alo','78787878X','alo@alo','nolahay','sala',0),(2,'marcos','456',0,'marcos','becerro','12121212B','ma@be','nolase','madrid',0),(3,'pedrolito','hola',0,'pedro','guti',NULL,NULL,NULL,NULL,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 

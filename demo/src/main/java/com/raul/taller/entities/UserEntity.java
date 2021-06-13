@@ -20,8 +20,8 @@ public class UserEntity {
 	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "enabled")
-	private Integer enabled;
+	@Column(name = "trabajador")
+	private Integer trabajador;
 	
 	@Column(name = "nombre")
 	private String nombre;
@@ -56,13 +56,13 @@ public class UserEntity {
 		this.apellidos = apellidos;
 	}
 
-	public UserEntity(Integer id_users, String username, String password, Integer enabled, String nombre,
+	public UserEntity(Integer id_users, String username, String password, Integer trabajador, String nombre,
 			String apellidos, String dni, String email, String direccion, String domicilio, Integer numero_ruedas) {
 		super();
 		this.id_users = id_users;
 		this.username = username;
 		this.password = password;
-		this.enabled = enabled;
+		this.trabajador = trabajador;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.dni = dni;
@@ -100,12 +100,12 @@ public class UserEntity {
 		this.password = password;
 	}
 
-	public Integer getEnabled() {
-		return enabled;
+	public Integer getTrabajador() {
+		return trabajador;
 	}
 
-	public void setEnabled(Integer enabled) {
-		this.enabled = enabled;
+	public void setTrabajador(Integer trabajador) {
+		this.trabajador = trabajador;
 	}
 
 	public String getNombre() {

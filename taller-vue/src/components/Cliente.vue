@@ -1,6 +1,7 @@
 <template>
 <h1>Tus vehículos:</h1>
-<div class="row d-flex justify-content-start" id="resultado"  v-for="(coche,index) in vehiculos" :key="index">
+<div v-if="vehiculos.length>0">
+<div  class="row d-flex justify-content-start" id="resultado"  v-for="(coche,index) in vehiculos" :key="index">
         <ul class="col-3">
         <h3>{{coche.modelo}}</h3>
         <h5>{{coche.matricula}}</h5>
@@ -11,7 +12,8 @@
 </div>
 <div v-if="matricula!=''" >
   <Manteniemiento :matricula="matricula"/>
-</div>
+</div></div>
+<span v-else>No hay vehiculos para este usuario</span>
 </template>
 
 <script>
