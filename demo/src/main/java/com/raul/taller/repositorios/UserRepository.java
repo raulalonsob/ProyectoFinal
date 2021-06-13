@@ -14,12 +14,14 @@ public interface UserRepository extends CrudRepository<UserEntity, String> {
 	@Query (value="select new com.raul.taller.dtos.UserDTO (a. id_users, a.username, a.password, a.trabajador, a.nombre, a.apellidos, a.dni, a.email, a.direccion, a.domicilio, a.numero_ruedas) "
 			+ "FROM com.raul.taller.entities.UserEntity a "
 			+ "WHERE (a.username LIKE :username) "
-			+ "And (a.password LIKE :password)" )
+			+ "And (a.password LIKE :password)"
+			+ "And (a.trabajador LIKE :trabajador)" )
 			
 	 List<UserDTO>obtenerUser(
 				
 				@Param("username")	String username,
-				@Param("password") String password);
+				@Param("password") String password,
+				@Param("trabajador")Integer trabajador);
 				
 
 }

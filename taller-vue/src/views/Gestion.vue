@@ -1,32 +1,26 @@
 <template>
 
-    <div class="container row align-items-center">
+    <div v-if="usuar=='mostrar'" class="container row align-items-center">
 
-	<form class="form-signin col-sm-12 col-md-5 col-xl-8" v-on:submit.prevent="mandar">
-		<h1 class="form-signin-heading text-muted">Inicio Sesión</h1>
-		<input type="text" class="form-control" placeholder="Username" required autofocus="" v-model.lazy="usuario.username">
-		<input type="password" class="form-control" placeholder="Password" required v-model.lazy="usuario.password">
-    <input type="checkbox" id="Si" true-value=1 false-value=0 v-model="usuario.trabajador">
-    <label for="si">Selecciones si es trabajador</label>
+        <form class="form-signin col-sm-12 col-md-5 col-xl-8" v-on:submit.prevent="mandar">
+            <h1 class="form-signin-heading text-muted">Inicio Sesión</h1>
+            <input type="text" class="form-control" placeholder="Username" required autofocus="" v-model.lazy="usuario.username">
+            <input type="password" class="form-control" placeholder="Password" required v-model.lazy="usuario.password">    
+            <div v-if="perfil.length==0" class="col-12">
+                <span class="error text-danger">Usuario o contraseña incorrectos</span>
+            </div>
+            <input type="submit" class="btn btn-lg btn-primary btn-block" value="Iniciar">
+            <input type="button" class="btn btn-lg btn-primary btn-block" value="Cerrar Sesión" @click="cerrar">	
+        </form>
 
-        <div v-if="perfil.length==0" class="col-12">
-            <span class="error text-danger">Usuario o contraseña incorrectos</span>
+        <div  class="col-xl-2 col-md-7 align-self-rigth" id="log" >
+            <img alt="log" src="../assets/trabaj.png" id="log">
         </div>
-		<input type="submit" class="btn btn-lg btn-primary btn-block" value="Iniciar">
-        <input type="button" class="btn btn-lg btn-primary btn-block" value="Cerrar Sesión" @click="cerrar">	
-	</form>
-    <div v-if="perfil.length==1" class="col-md-6 col-sm-12">
-          <Cliente :usuario="usuar"/>
-    </div>
-    <div v-else class="col-xl-2 col-md-7 align-self-rigth" id="log" >
-      <img alt="log" src="../assets/login.png" id="log">
-    </div>
-
-
-
     
-
-</div>
+    </div>
+    <div v-else>
+        hola {{usuar}}
+    </div>
 </template>
 <script>
 import Cliente from "../components/Cliente.vue"
@@ -37,11 +31,11 @@ export default {
   data(){
   return{
       perfil:[2,2],
-      usuar:"",
+      usuar:"mostrar",
       usuario:{
         username: "",
         password: "",
-        trabajador:"0",
+        trabajador:"1",
 
       },
   } 
@@ -55,7 +49,7 @@ export default {
         params: this.usuario
         }
         )
-        .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].id_users)// this.perfil= response.data
+        .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].username, console.log(this.usuar))// this.perfil= response.data
         );
     },
     cerrar(){
@@ -142,9 +136,5 @@ body {
   #log{
     
     min-width: 500px;
-  }
-  .form-signin input[type="checkbox"]{
-    margin-right:5px ;
-    margin-left:5px ;
   }
 </style>

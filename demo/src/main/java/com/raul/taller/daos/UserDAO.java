@@ -8,6 +8,6 @@ import com.raul.taller.dtos.UserDTO;
 
 public interface UserDAO {
 	
-	List<UserDTO>obtenerUser(String username, String password);
+	List<UserDTO>obtenerUser(String username, String password, Integer trabajador);
 
 }

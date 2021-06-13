@@ -30,9 +30,10 @@ public class UserRestController {
 	@GetMapping(value = "/users", params = {"username","password"})
 	public List<UserDTO>obtenerUser(
 			@RequestParam(value = "username") String username,
-			@RequestParam(value ="password", required = false) String password){
+			@RequestParam(value ="password", required = false) String password,
+			@RequestParam(value ="trabajador", required = false) Integer trabajador){
 			
-		return userDAO.obtenerUser(username, password);
+		return userDAO.obtenerUser(username, password, trabajador);
 				}
 
 }

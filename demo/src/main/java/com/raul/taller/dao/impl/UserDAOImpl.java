@@ -16,8 +16,8 @@ public class UserDAOImpl implements UserDAO {
 	private UserRepository userRepo;
 	
 	@Override
-	public List<UserDTO>obtenerUser(String username, String password){
-		return userRepo.obtenerUser(username, password);
+	public List<UserDTO>obtenerUser(String username, String password, Integer trabajador){
+		return userRepo.obtenerUser(username, password, trabajador);
 	}
 }
 

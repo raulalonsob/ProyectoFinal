@@ -14,10 +14,11 @@ public class UserDTO {
 	
 	
 	
-	public UserDTO(String username, String password) {
+	public UserDTO(String username, String password, Integer trabajador) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.trabajador= trabajador;
 	}
 	public UserDTO(Integer id_users, String username, String password, String nombre, String apellidos) {
 		super();
