@@ -44,36 +44,6 @@ INSERT INTO `authorities` VALUES ('ROLE_CLIENTE','marcos'),('ROLE_CLIENTE','pedr
 UNLOCK TABLES;
 
 --
--- Table structure for table `facturas`
---
-
-DROP TABLE IF EXISTS `facturas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `facturas` (
-  `id_facturas` int NOT NULL AUTO_INCREMENT,
-  `id_mantenimientos` int NOT NULL,
-  `importe` varchar(45) DEFAULT NULL,
-  `id_users` int NOT NULL,
-  PRIMARY KEY (`id_facturas`),
-  KEY `fk_facturas_mantenimientos1_idx` (`id_mantenimientos`),
-  KEY `fk_facturas_users1_idx` (`id_users`),
-  CONSTRAINT `fk_facturas_mantenimientos1` FOREIGN KEY (`id_mantenimientos`) REFERENCES `mantenimientos` (`id_mantenimientos`),
-  CONSTRAINT `fk_facturas_users1` FOREIGN KEY (`id_users`) REFERENCES `users` (`id_users`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `facturas`
---
-
-LOCK TABLES `facturas` WRITE;
-/*!40000 ALTER TABLE `facturas` DISABLE KEYS */;
-INSERT INTO `facturas` VALUES (1,2,'100',2),(2,4,'150',2),(3,1,'60',3);
-/*!40000 ALTER TABLE `facturas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `mantenimientos`
 --
 
@@ -88,6 +58,7 @@ CREATE TABLE `mantenimientos` (
   `cantidad_ruedas` int NOT NULL,
   `posicion_rueda` varchar(10) DEFAULT NULL,
   `id_ruedas` int NOT NULL,
+  `importe` varchar(45) NOT NULL,
   PRIMARY KEY (`id_mantenimientos`),
   KEY `fk_mantenimientos_vehiculos1_idx` (`matricula`),
   KEY `fk_mantenimientos_ruedas1_idx` (`id_ruedas`),
@@ -102,7 +73,7 @@ CREATE TABLE `mantenimientos` (
 
 LOCK TABLES `mantenimientos` WRITE;
 /*!40000 ALTER TABLE `mantenimientos` DISABLE KEYS */;
-INSERT INTO `mantenimientos` VALUES (1,'2610FYR','2021-04-27',115652,4,'todos',7),(2,'1616LZT','2021-05-31',254621,2,'trasera',3),(3,'4568BZR','2020-10-31',144631,2,'delantera',2),(4,'1616LZT','2020-10-31',546321,2,'delantera',2),(5,'7610BDD','2020-10-31',254621,4,'todos',10);
+INSERT INTO `mantenimientos` VALUES (1,'2610FYR','2021-04-27',115652,4,'todos',7,'124'),(2,'1616LZT','2021-05-31',254621,2,'trasera',3,'89'),(3,'4568BZR','2020-10-31',144631,2,'delantera',2,'98'),(4,'1616LZT','2020-10-31',546321,2,'delantera',2,'175'),(5,'7610BDD','2020-10-31',254621,4,'todos',10,'210');
 /*!40000 ALTER TABLE `mantenimientos` ENABLE KEYS */;
 UNLOCK TABLES;
 
