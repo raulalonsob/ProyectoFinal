@@ -7,7 +7,7 @@
 		<input type="text" class="form-control" placeholder="Username" required autofocus="" v-model.lazy="usuario.username">
 		<input type="password" class="form-control" placeholder="Password" required v-model.lazy="usuario.password">
     <input type="checkbox" id="Si" true-value=1 false-value=0 v-model="usuario.trabajador">
-    <label for="si">Selecciones si es trabajador</label>
+    <label for="si">Soy empleado de TireWheels</label>
 
         <div v-if="perfil.length==0" class="col-12">
             <span class="error text-danger">Usuario o contraseña incorrectos</span>

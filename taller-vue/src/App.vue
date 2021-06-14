@@ -15,7 +15,7 @@
   <div class="col-12 d-flex justify-content-around" id="vistas">
     <router-view/>
   </div>
-  <div class="col-12 align-self-end" id="footer">
+  <div class="col-12 align-self-end" >
     <Footer/>
   </div>
   
@@ -46,8 +46,10 @@ export default {
 }
 
 #container{
-
+  width: 100%;
   height: 99vh; 
+  margin: 0px;
+  padding: 0%;
 }
 
 #vistas{

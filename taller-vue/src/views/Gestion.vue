@@ -10,7 +10,6 @@
                 <span class="error text-danger">Usuario o contraseña incorrectos</span>
             </div>
             <input type="submit" class="btn btn-lg btn-primary btn-block" value="Iniciar">
-            <input type="button" class="btn btn-lg btn-primary btn-block" value="Cerrar Sesión" @click="cerrar">	
         </form>
 
         <div  class="col-xl-2 col-md-7 align-self-rigth" id="log" >
@@ -18,15 +17,17 @@
         </div>
     
     </div>
-    <div v-else>
-        hola {{usuar}}
+    <div v-else class="container row ">
+          
+    
+        <Trabajador :usuario="usuar" /><input type="button" class="boton " id="borrar" value="cerrar sesion" @click="cerrar">
     </div>
 </template>
 <script>
-import Cliente from "../components/Cliente.vue"
+import Trabajador from "../components/Trabajador.vue"
 import axios from "axios"
 export default {
-  name: 'Cuenta',
+  name: 'Gestion',
 
   data(){
   return{
@@ -41,8 +42,8 @@ export default {
   } 
   },
   components: {
-    Cliente
-    },
+   Trabajador
+   },
     methods: {
     mandar(){
         axios.get("http://localhost:8080/taller/v1/users",{
@@ -53,8 +54,8 @@ export default {
         );
     },
     cerrar(){
-        this.perfil=[2,2],
-        this.usuar=""
+
+        this.usuar="mostrar"
     }
     }
 

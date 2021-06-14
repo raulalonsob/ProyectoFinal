@@ -11,6 +11,7 @@
         </form>
 </div>
 <div v-if="matricula!=''" >
+
   <Manteniemiento :matricula="matricula"/>
 </div></div>
 <span v-else>No hay vehiculos para este usuario</span>
