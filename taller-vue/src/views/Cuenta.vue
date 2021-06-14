@@ -69,6 +69,10 @@ export default {
 </script>
 
 <style scoped>
+form label{
+	width:90%;
+
+}
 body {
     padding-top: 120px;
     padding-bottom: 40px;

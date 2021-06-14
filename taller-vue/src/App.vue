@@ -47,13 +47,16 @@ export default {
 
 #container{
   width: 100%;
-  height: 99vh; 
+  height: 98vh; 
   margin: 0px;
   padding: 0%;
+
 }
 
 #vistas{
   padding-top: 25px;
+  padding-bottom: 25px;;
+
 
 }
 #nav a {

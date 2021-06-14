@@ -7,10 +7,10 @@
           <input type="button" class="boton" value="Introducir Ruedas" @click="setActividad(inserRuedas)"><br>
           <input type="button" class="boton" value="Modificar Ruedas" @click="setActividad(modifRuedas)"><br>
           <input type="button" class="boton" value="Añadir Usuario" @click="setActividad(anadirUser)"><br>
-          <input type="button" class="boton" value="Añadir Vehiculo" @click="setActividad(anadirVehiculo)"><br>  
+          <input type="button" class="boton" value="Añadir Vehículo" @click="setActividad(anadirVehiculo)"><br>  
         </form>
         <div v-if="actividad=='venta'" class="col-md-5">
-            /**insertar componente venta */
+            <Venta/>
         </div>
         <div v-else-if="actividad=='insertarRuedas'" class="col-5">
             /**insertar componente rueda */
@@ -32,7 +32,7 @@
 
 
 <script>
-
+import Venta from "../components/Venta.vue"
 import axios from "axios"
 export default {
   name: 'Trabajador',
@@ -51,9 +51,11 @@ export default {
   methods:{
     setActividad(nueva){
       this.actividad=nueva;
-      console.log(this.actividad)
     }
 
+  },
+  components:{
+    Venta
   },
 
 

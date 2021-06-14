@@ -20,7 +20,7 @@
     <div v-else class="container row ">
           
     
-        <Trabajador :usuario="usuar" /><input type="button" class="boton " id="borrar" value="cerrar sesion" @click="cerrar">
+        <Trabajador :usuario="usuar" /><input type="button" class="boton " id="borrar" value="Cerrar Sesión" @click="cerrar">
     </div>
 </template>
 <script>
