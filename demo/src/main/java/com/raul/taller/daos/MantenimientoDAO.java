@@ -7,5 +7,6 @@ import com.raul.taller.dtos.MantenimientoRequestDTO;
 
 public interface MantenimientoDAO {
 	List<MantenimientoRequestDTO> obtenerMantenimiento(String matricula);
+	Boolean obtenerMant(MantenimientoDTO mantenimiento);
 
 }

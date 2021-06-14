@@ -12,8 +12,32 @@ public class MantenimientoDTO {
 	private Integer cantidad_ruedas;
 	private String posicion_rueda;
 	private Integer id_ruedas;
+	private String importe;
 	
 	
+	public MantenimientoDTO(String matricula, String fecha, Integer kilometros, Integer cantidad_ruedas,
+			String posicion_rueda, Integer id_ruedas, String importe) {
+		super();
+		this.matricula = matricula;
+		this.fecha = fecha;
+		this.kilometros = kilometros;
+		this.cantidad_ruedas = cantidad_ruedas;
+		this.posicion_rueda = posicion_rueda;
+		this.id_ruedas = id_ruedas;
+		this.importe = importe;
+	}
+	/**
+	 * @return the importe
+	 */
+	public String getImporte() {
+		return importe;
+	}
+	/**
+	 * @param importe the importe to set
+	 */
+	public void setImporte(String importe) {
+		this.importe = importe;
+	}
 	/**
 	 * @param matricula
 	 */
