@@ -123,7 +123,6 @@ CREATE TABLE `ruedas` (
   `carga` varchar(45) DEFAULT NULL,
   `velocidad` varchar(45) DEFAULT NULL,
   `precio` varchar(45) NOT NULL,
-  `stock` int NOT NULL,
   PRIMARY KEY (`id_ruedas`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -134,7 +133,7 @@ CREATE TABLE `ruedas` (
 
 LOCK TABLES `ruedas` WRITE;
 /*!40000 ALTER TABLE `ruedas` DISABLE KEYS */;
-INSERT INTO `ruedas` VALUES (1,'Michelin','primacy 4',205,55,16,'91','v','70',10),(2,'Michelin','primacy 3',215,55,16,'97','Y','105',8),(3,'Michelin','primacy 4',215,65,16,'95','v','87',8),(4,'Dunlop','sport',175,65,15,'84','h','65',6),(5,'Dunlop','sport',205,55,16,'91','v','62,10',6),(6,'Dunlop','bluresponse',195,65,15,'91','v','55',4),(7,'Continental','ecocontact 6',250,55,16,'91','v','64',4),(8,'Continental','premiumcontact 6',225,50,17,'98','y','114',6),(9,'Continental','premiumcontact 6',215,55,18,'99','v','112,40',6),(10,'Continental','ecocontact 6',215,60,17,'96','h','100',4),(11,'Pirelli','pzero',225,50,17,'98','y','85,70',12),(12,'Pirelli','pzero',225,40,18,'92','y','74',8),(13,'Pirelli','cinturato p7',205,60,16,'96','v','84,50',10);
+INSERT INTO `ruedas` VALUES (1,'Michelin','primacy 4',205,55,16,'91','v','70'),(2,'Michelin','primacy 3',215,55,16,'97','Y','105'),(3,'Michelin','primacy 4',215,65,16,'95','v','87'),(4,'Dunlop','sport',175,65,15,'84','h','65'),(5,'Dunlop','sport',205,55,16,'91','v','62,10'),(6,'Dunlop','bluresponse',195,65,15,'91','v','55'),(7,'Continental','ecocontact 6',250,55,16,'91','v','64'),(8,'Continental','premiumcontact 6',225,50,17,'98','y','114'),(9,'Continental','premiumcontact 6',215,55,18,'99','v','112,40'),(10,'Continental','ecocontact 6',215,60,17,'96','h','100'),(11,'Pirelli','pzero',225,50,17,'98','y','85,70'),(12,'Pirelli','pzero',225,40,18,'92','y','74'),(13,'Pirelli','cinturato p7',205,60,16,'96','v','84,50');
 /*!40000 ALTER TABLE `ruedas` ENABLE KEYS */;
 UNLOCK TABLES;
 
