@@ -28,11 +28,7 @@ export default {
     components: {
     Footer
     },
-  created() {
-    axios.get("http://localhost:8080/taller/v1/vehiculos").then((result) => {
-      console.log(result.data);
-    })
-  }
+
 };
 </script>
 

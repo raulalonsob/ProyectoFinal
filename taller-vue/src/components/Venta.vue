@@ -32,8 +32,10 @@
     <div class="d-flex justify-content-around">
         <input type="submit" class="boton" value="Aceptar">
         <input type="button" class="boton"  value="Cancelar" @click="cancelar">
-        <input class="boton" type="button" @click="aceptar" value="Guardar">
     </div>
+    <span v-show="ok" class="ok">*Manteniemiento guardado correctamente</span>
+    <span v-show="errMatri" class="error">Matricula no registrada en el sistema</span>
+    <span v-show="error">Error, por favor intentelo de nuevo</span>
     </form> 
 </div>   
 </template>
@@ -44,6 +46,9 @@ export default {
     data(){
     return{
         ruedas:[],
+        vehiculos:[],
+        ok:false,
+        errMatri:false,
         mantenimiento:{
             matricula:"",
             fecha:"",
@@ -66,8 +71,10 @@ export default {
         "posicion_rueda":this.mantenimiento.posicion_rueda,
         "id_ruedas":this.mantenimiento.id_ruedas})
 
-          .then(response=>{console.log(response)}),
-           console.log(JSON.stringify(this.mantenimiento))
+          .then(response=>{this.ok=true}).
+          catch(error=> {
+            this.errMatri=true
+          } )
         
     },
     cancelar(){
@@ -83,7 +90,10 @@ export default {
 
   created() {
     axios.get("http://localhost:8080/taller/v1/ruedas")
-    .then(response => {this.ruedas = response.data;})
+    .then(response => {this.ruedas = response.data;}),
+    
+    axios.get("http://localhost:8080/taller/v1/vehiculos").then((result) => { this.vehiculos = result.data})
+  
   }
     
 
@@ -122,7 +132,6 @@ input[type="date"]{
 	display:inline-block;
 
 }
-
 
 form label{
 	width:100px;
@@ -169,5 +178,13 @@ input[type="number"]{
 
 #borrar{
   margin-left: 40px;
+}
+.error{
+  color: red;
+  font-size: 20px;
+}
+.ok{
+  color: forestgreen;
+  font-size:20px ;
 }
 </style>
