@@ -33,6 +33,18 @@ public class MantenimientoEntity {
 	
 	
 	
+	public MantenimientoEntity(Integer id_mantenimientos, String matricula, String fecha, Integer kilometros,
+			Integer cantidad_ruedas, String posicion_rueda, Integer id_ruedas, String importe) {
+		super();
+		this.id_mantenimientos = id_mantenimientos;
+		this.matricula = matricula;
+		this.fecha = fecha;
+		this.kilometros = kilometros;
+		this.cantidad_ruedas = cantidad_ruedas;
+		this.posicion_rueda = posicion_rueda;
+		this.id_ruedas = id_ruedas;
+		this.importe = importe;
+	}
 	public MantenimientoEntity(String matricula, String fecha, Integer kilometros, Integer cantidad_ruedas,
 			String posicion_rueda, Integer id_ruedas, String importe) {
 		super();

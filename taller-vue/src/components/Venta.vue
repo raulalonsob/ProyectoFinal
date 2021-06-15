@@ -3,26 +3,26 @@
     <form v-on:submit.prevent="aceptar">
       <h2>Nuevo Manteniemiento:</h2>
     <label for="matricula">Matrícula:</label>
-        <input type="text" name="matricula" v-model.lazy="mandar.matricula" required pattern="[0-9]{4}[BCDFGHJKLMNPRSTVWXYZ]{3}|[A-Z]{2}[0-9]{4}[A-Z]{2}|[A-Z]{1}[0-9]{4}[A-Z]{2}|[A-Z]{1}[0-9]{4}[A-Z]{1}|[A-Z]{2}[0-9]{4}[A-Z]{1}|[A-Z]{3}[0-9]{4}[A-Z]{2}|[A-Z]{3}[0-9]{1,4}[A-Z]{1}|">
+        <input type="text" name="matricula" v-model="mantenimiento.matricula" required pattern="[0-9]{4}[BCDFGHJKLMNPRSTVWXYZ]{3}|[A-Z]{2}[0-9]{4}[A-Z]{2}|[A-Z]{1}[0-9]{4}[A-Z]{2}|[A-Z]{1}[0-9]{4}[A-Z]{1}|[A-Z]{2}[0-9]{4}[A-Z]{1}|[A-Z]{3}[0-9]{4}[A-Z]{2}|[A-Z]{3}[0-9]{1,4}[A-Z]{1}|">
       <br>
     <label for="fecha">Fecha:</label>
-        <input type="date" name="fecha" v-model.lazy="mandar.fecha" required>
+        <input type="date" name="fecha" v-model.lazy="mantenimiento.fecha" required>
       <br>
-    <label for="matricula">kilómetros:</label>
-        <input type="text" name="matricula" v-model.lazy="mandar.kilometros" required pattern="[0-9]{1,7}">
+    <label for="kilometros">kilómetros:</label>
+        <input type="text" name="kilometros" v-model.number="mantenimiento.kilometros" required pattern="[0-9]{1,7}">
       <br>
     <label for="cantidad">Nº Ruedas:</label>
-        <input type="number" name="cantidad" v-model.lazy="mandar.cantidad_ruedas" required>
+        <input type="number" name="cantidad" v-model.number="mantenimiento.cantidad_ruedas" required>
       <br>
     <label for="posicion">Posición:</label><br>
         
-            <input type="radio" name="posicion" value="delanteras" v-model.lazy="mandar.posicion_rueda" required>Delantera
-            <input type="radio" name="posicion" value="traseras" v-model.lazy="mandar.posicion_rueda" required>Trasera
-            <input type="radio" name="posicion" value="todas" v-model.lazy="mandar.posicion_rueda" required>Todas  
+            <input type="radio" name="posicion" value="delanteras" v-model="mantenimiento.posicion_rueda" required>Delantera
+            <input type="radio" name="posicion" value="traseras" v-model="mantenimiento.posicion_rueda" required>Trasera
+            <input type="radio" name="posicion" value="todas" v-model="mantenimiento.posicion_rueda" required>Todas  
 
       <br>
     <label for="marca">Rueda:</label>
-      <select id="marca" v-model.lazy="mandar.id_ruedas" required>
+      <select id="marca" v-model.number="mantenimiento.id_ruedas" required>
         <option v-for="(rueda,index) in ruedas" :key ="index" :value='rueda.id_ruedas'>{{rueda.marca}}_{{rueda.modelo}}_{{rueda.anchura}}/{{rueda.perfil}}_{{rueda.carga}}{{rueda.velocidad}}</option>
       </select>
 
@@ -32,6 +32,7 @@
     <div class="d-flex justify-content-around">
         <input type="submit" class="boton" value="Aceptar">
         <input type="button" class="boton"  value="Cancelar" @click="cancelar">
+        <input class="boton" type="button" @click="aceptar" value="Guardar">
     </div>
     </form> 
 </div>   
@@ -43,34 +44,39 @@ export default {
     data(){
     return{
         ruedas:[],
-        mandar:{
+        mantenimiento:{
             matricula:"",
             fecha:"",
             kilometros:"",
             cantidad_ruedas:"",
             posicion_rueda:"",
-            id_ruedas:""
+            id_ruedas:"",
         }
     }
   },
 
     methods: {
     aceptar(){
-        /**axios.get("http://localhost:8080/taller/v1/users",{
-        params: this.usuario
-        }
-        )
-        .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].id_users)// this.perfil= response.data
-        );*/
-        console.log(this.mandar);
+      axios.post('http://localhost:8080/taller/v1/mantenimiento', {
+        //json.stringify(this.mantenimiento) da error  
+        "matricula":this.mantenimiento.matricula,
+        "fecha":this.mantenimiento.fecha,
+        "kilometros":this.mantenimiento.kilometros,
+        "cantidad_ruedas":this.mantenimiento.cantidad_ruedas,
+        "posicion_rueda":this.mantenimiento.posicion_rueda,
+        "id_ruedas":this.mantenimiento.id_ruedas})
+
+          .then(response=>{console.log(response)}),
+           console.log(JSON.stringify(this.mantenimiento))
+        
     },
     cancelar(){
-        this.mandar.matricula="",
-        this.mandar.fecha="",
-        this.mandar.kilometros="",
-        this.mandar.cantidad_ruedas="",
-        this.mandar.posicion_rueda="",
-        this.mandar.id_ruedas=""
+        this.mantenimiento.matricula="",
+        this.mantenimiento.fecha="",
+        this.mantenimiento.kilometros="",
+        this.mantenimiento.cantidad_ruedas="",
+        this.mantenimiento.posicion_rueda="",
+        this.mantenimiento.id_ruedas=""
         
     }
     },

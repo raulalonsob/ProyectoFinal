@@ -10,15 +10,19 @@ public class MantenimientoRequestDTO {
 	private Integer cantidad_ruedas;
 	private String posicion_rueda;
 	private Integer id_ruedas;
+	private String importe;	
 	private String marca;
 	private String modelo;
+	
+
+	
 	
 	
 	
 	
 	
 	public MantenimientoRequestDTO(Integer id_mantenimientos, String matricula, String fecha, Integer kilometros,
-			Integer cantidad_ruedas, String posicion_rueda, Integer id_ruedas, String marca, String modelo) {
+			Integer cantidad_ruedas, String posicion_rueda, Integer id_ruedas, String importe, String marca, String modelo) {
 		super();
 		this.id_mantenimientos = id_mantenimientos;
 		this.matricula = matricula;
@@ -27,6 +31,7 @@ public class MantenimientoRequestDTO {
 		this.cantidad_ruedas = cantidad_ruedas;
 		this.posicion_rueda = posicion_rueda;
 		this.id_ruedas = id_ruedas;
+		this.importe=importe;
 		this.marca = marca;
 		this.modelo = modelo;
 	}
@@ -137,6 +142,18 @@ public class MantenimientoRequestDTO {
 	 */
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
+	}
+	/**
+	 * @return the importe
+	 */
+	public String getImporte() {
+		return importe;
+	}
+	/**
+	 * @param importe the importe to set
+	 */
+	public void setImporte(String importe) {
+		this.importe = importe;
 	}
 	
 	

@@ -1,5 +1,5 @@
 <template>
-<h1>Mantenimientos:</h1>{{matricula}}
+<h1>Mantenimientos: {{matricula}}</h1>
 
 <div class="row d-flex justify-content-start" id="resultado"  v-for="(mant,index) in mantenimientos" :key="index">
         <ul class="col-12">
@@ -7,10 +7,9 @@
         <li>Posición: {{mant.posicion_rueda}}</li>
         <li>Kilómetros: {{mant.kilometros}} km</li>
         <li>Rueda: {{mant.marca}} {{mant.modelo}}</li>
+        <li>Importe: {{mant.importe}}€</li>
         </ul>
-        <form >
-            <input type="button" class="boton" id="borrar" value="Ver factura" @click="mandarMatricula(coche.matricula)">
-        </form>
+
 </div>
 <div>
   

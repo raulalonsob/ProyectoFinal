@@ -1,6 +1,6 @@
 <template>
   <div class="row justify-content-around" id="vista">
-    <div class="align-items-center d-md-none d-xl-block col-lg-2  " id=imagen><img alt="rueda" src="../assets/rueda.png" id="rueda"></div>
+    <div class="img-responsive d-md-none d-xl-block col-lg-3  " id=imagen><img alt="rueda" src="../assets/rueda.png" id="rueda"></div>
  
     <div class="d-flex justify-content-around col-md-12 col-lg-3">
       <form>
@@ -42,8 +42,11 @@
       </form>    
 
     </div>      
-    <div class="row col-md-4" id="resultado" v-show="busqueda">
+    <div class="row col-md-4" id="resultado" v-show="mostrar">
       <RuedasSelec :filtro="ruedasFiltro" />
+    </div>
+    <div class="row col-md-5 img-responsive"  >
+      <img alt="marcas" src="../assets/marcas.png" id="marcas">
     </div>
   </div>
 
@@ -73,12 +76,14 @@ export default {
         carga: "",
         velocidad: "",
         precio: "",
-      }
+      },
+      mostrar:false
     }
     },
 
     methods: {
     mandar(){
+    this.mostrar=true,
     axios.get("http://localhost:8080/taller/v1/ruedas",{
       params: this.busqueda
     }
@@ -86,6 +91,7 @@ export default {
     .then(response => this.ruedasFiltro=response.data);
     },
     limpiar(){
+        this.mostrar=false,
         this.busqueda.marca = "",
         this.busqueda.anchura="",
         this.busqueda.perfil= "",
@@ -121,7 +127,8 @@ background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
 }
 
 #rueda{
-  width: 80%
+  width: 80%;
+  margin-bottom:2%
 }
 form{
   min-width: 400px;
