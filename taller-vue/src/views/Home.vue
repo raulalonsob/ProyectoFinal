@@ -103,7 +103,7 @@ export default {
   },
   created() {
     axios.get("http://localhost:8080/taller/v1/ruedas")
-    .then(response => {this.ruedas = response.data;})
+    .then(response => {this.ruedas = response.data, console.log(response)})
   }
 }
 </script>

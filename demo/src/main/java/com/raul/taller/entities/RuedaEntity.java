@@ -2,6 +2,8 @@ package com.raul.taller.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 public class RuedaEntity {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_ruedas")
 	private Integer id_ruedas;
 	
@@ -39,9 +42,25 @@ public class RuedaEntity {
 	
 	@Column(name = "stock")
 	private String stock;
+	
+	
+	
 
+	public RuedaEntity(String marca, String modelo, Integer anchura, Integer perfil, Integer llanta, Integer carga,
+			String velocidad, String precio) {
+		super();
+		this.marca = marca;
+		this.modelo = modelo;
+		this.anchura = anchura;
+		this.perfil = perfil;
+		this.llanta = llanta;
+		this.carga = carga;
+		this.velocidad = velocidad;
+		this.precio = precio;
+
+	}
 	public RuedaEntity(Integer id_ruedas, String marca, String modelo, Integer anchura, Integer perfil, Integer llanta,
-			Integer carga, String velocidad, String precio, String stock) {
+			Integer carga, String velocidad, String precio) {
 		super();
 		this.id_ruedas = id_ruedas;
 		this.marca = marca;
@@ -52,7 +71,7 @@ public class RuedaEntity {
 		this.carga = carga;
 		this.velocidad = velocidad;
 		this.precio = precio;
-		this.stock = stock;
+
 	}
 	public RuedaEntity(String marca,Integer anchura, Integer perfil, Integer llanta,
 			Integer carga, String velocidad) {
@@ -142,14 +161,7 @@ public class RuedaEntity {
 		this.precio = precio;
 	}
 
-	public String getStock() {
-		return stock;
-	}
 
-	public void setStock(String stock) {
-		this.stock = stock;
-	}
-	
 	
 	
 	
