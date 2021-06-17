@@ -46,6 +46,11 @@ public class RuedaDTO {
 		this.precio = precio;
 		this.stock = stock;
 	}
+	
+	public RuedaDTO(Integer id_ruedas) {
+		super();
+		this.id_ruedas = id_ruedas;
+	}
 	public Integer getId_ruedas() {
 		return id_ruedas;
 	}

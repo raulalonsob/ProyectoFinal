@@ -12,4 +12,6 @@ public interface RuedaDAO {
 	
 	Boolean insertarRueda(String marca, String modelo, Integer anchura, Integer perfil, Integer llanta,
 			Integer carga, String velocidad, String precio);
+	
+	Integer eliminarRueda(Integer id);
 }

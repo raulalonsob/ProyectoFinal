@@ -35,4 +35,10 @@ public class RuedaDAOImpl implements RuedaDAO{
 		return true;
 	}
 	
+	@Override
+	public Integer eliminarRueda(Integer id) {
+		ruedaRepos.deleteById(id);
+		return 1;
+	}
+	
 }

@@ -85,6 +85,11 @@ public class RuedaEntity {
 		this.velocidad = velocidad;
 		}
 
+
+	public RuedaEntity(Integer id_ruedas) {
+		super();
+		this.id_ruedas = id_ruedas;
+	}
 	public RuedaEntity() {
 		super();
 	}
