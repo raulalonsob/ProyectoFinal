@@ -13,7 +13,7 @@
         <li> Llanta: {{rod.llanta}}</li>
         <li> Carga: {{rod.carga}}</li>
         <li> Velocidad: {{rod.velocidad}}</li>
-        <li> Precio: {{rod.precio}}€</li>
+        <li> Precio: {{rod.precio}}€ +IVA</li>
 
         </ul>
         </div>
@@ -33,9 +33,30 @@
 
         <form>
           <label for="cantidad">Nº Ruedas: </label>
-            <input type="number" name="cantidad" v-model.number="ruedas" required>
-          <input type="button" class="boton" id="borrar" value="calcular precio" @click="calcularPrecio(rod.precio)">
+            <input type="number" min="0" name="cantidad" v-model.number="ruedas[index]" required>
+          <input type="button" class="boton" id="calcular" data-toggle="modal" data-target="#miModal" value="calcular precio" @click="calcularPrecio(rod.precio,index)">
+          
+
         </form>
+        <!-- div para el modal de calcular precio -->
+        <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+
+              <h4>¡Gracias por su consulta!</h4>				
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5 v-if="importe>0" id="total" >Total: {{importe}}€ <span id="small">(IVA Incluido)</span></h5>
+              <h5 v-else> No has introducido un número de ruedas</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
         
     
    <hr>
@@ -52,19 +73,25 @@ export default {
     data(){
     return{
         rueda:[],
-        ruedas:""
+        ruedas:[],
+        importe:"",
     }
   },
 
   methods: {
-    calcularPrecio(n){
-      console.log(n*this.ruedas)
+    calcularPrecio(n,p){
+      console.log(n*this.ruedas[p]),
+      this.importe=(n*this.ruedas[p]*1.21).toFixed(2),
+      this.ruedas=[]
     }
   },
   props:['filtro'],
   watch:{
     filtro(n){
       this.rueda=n;
+    },
+    ruedas(nueva){
+
     }
   }
     
@@ -106,6 +133,7 @@ input[type="number"]{
   border-radius: 6px;
   border: 2px solid #253b4d;
   margin-bottom: 1%;
+  
 }
 .boton:hover{
   color:#0a6897;
@@ -116,6 +144,16 @@ form{
   font-size:large;
 }
 #borrar{
+  margin-left: 40px;
+}
+#small{
+  font-size: 15px;
+  margin-top:0px;
+}
+#total{
+  margin-bottom: 0px;
+}
+#calcular{
   margin-left: 40px;
 }
 </style>

@@ -12,7 +12,7 @@
         <input type="text" name="kilometros" v-model.number="mantenimiento.kilometros" required pattern="[0-9]{1,7}">
       <br>
     <label for="cantidad">Nº Ruedas:</label>
-        <input type="number" name="cantidad" v-model.number="mantenimiento.cantidad_ruedas" required>
+        <input type="number" min="0" name="cantidad" v-model.number="mantenimiento.cantidad_ruedas" required>
       <br>
     <label for="posicion">Posición:</label><br>
         

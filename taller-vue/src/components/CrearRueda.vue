@@ -22,7 +22,7 @@
          <br>
     <label for="llanta">Llanta:</label>
         <select id="llanta" v-model.number="nueva.llanta" required>
-            <option v-for="(llanta,index) in llantas" :key ="index" :value='llanta'>{{llanta}}´´</option>
+            <option v-for="(llanta,index) in llantas" :key ="index" :value='llanta'>{{llanta}}</option>
         </select> 
       <br>
     <label for="carga">Carga:</label>
