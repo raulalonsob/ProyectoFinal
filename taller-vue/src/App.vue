@@ -1,7 +1,7 @@
 <template>
  <div  id=container class="row">
     <div class="row col-12" id="header">
-      <div class="col-md-5 col-lg-6" >TireWheels</div>
+      <div class="col-md-5 col-lg-6" id="tire" >TireWheels</div>
       <div class="col-md-6 col-md-5 d-flex justify-content-around  align-self-end" id="nav">
         <router-link class="router" to="/">Inicio</router-link> 
         <router-link class="router" to="/presentacion">¿Quiénes somos? </router-link>
@@ -59,6 +59,10 @@ export default {
   font-weight: bold;
   color: #2c3e50;
   
+}
+#tire{
+   -webkit-text-stroke: 1px red ;
+
 }
 
 #nav a.router-link-exact-active {

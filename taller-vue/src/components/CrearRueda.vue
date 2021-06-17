@@ -3,9 +3,9 @@
     <form v-on:submit.prevent="aceptar">
       <h2>Insertar nueva rueda:</h2>
     <label for="marca">Marca:</label>
-        <select id="marca" v-model="nueva.marca" required>
-            <option v-for="(marca,index) in marcas" :key ="index" :value='marca'>{{marca}}</option>
-      </select>
+
+        <input type="text" name="modelo" v-model="nueva.marca" required>
+
       <br>
     <label for="modelo">Modelo:</label>
         <input type="text" name="modelo" v-model="nueva.modelo" required>

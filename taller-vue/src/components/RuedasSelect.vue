@@ -18,23 +18,27 @@
         </ul>
         </div>
 
-        <div class="imagen col-4" v-if="rod.marca=='Michelin'">
+        <div class="imagen col-4" v-if="rod.marca=='Michelin' | rod.marca=='michelin'">
             <img  class="logo" src="../assets/Michelin.png">
         </div>
-        <div class="imagen col-4" v-if="rod.marca=='Dunlop'">
+        <div class="imagen col-4" v-else-if="rod.marca=='Dunlop'">
             <img  class="logo" src="../assets/Dunlop1.png">
         </div>
-        <div class="imagen col-4" v-if="rod.marca=='Continental'">
+        <div class="imagen col-4" v-else-if="rod.marca=='Continental'">
             <img  class="logo" src="../assets/Continental.png">
         </div>
-        <div class="imagen col-4 img-responsive" v-if="rod.marca=='Pirelli'">
+        <div class="imagen col-4 img-responsive" v-else-if="rod.marca=='Pirelli'">
             <img  class="logo" src="../assets/Pirelli.png">
         </div>
+        <div class="imagen col-4 img-responsive" v-else>
+            <img  class="logo" src="../assets/noFoto.png">
+        </div>
+
 
         <form>
           <label for="cantidad">Nº Ruedas: </label>
             <input type="number" min="0" name="cantidad" v-model.number="ruedas[index]" required>
-          <input type="button" class="boton" id="calcular" data-toggle="modal" data-target="#miModal" value="calcular precio" @click="calcularPrecio(rod.precio,index)">
+          <input type="button" class="boton" id="calcular" data-toggle="modal" data-target="#miModal" value="Calcular Precio" @click="calcularPrecio(rod.precio,index)">
           
 
         </form>

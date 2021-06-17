@@ -8,7 +8,12 @@
     <label for="marca">Marca:</label>
         <select id="marca" v-model="busqueda.marca" required>
             <option :value="''" >Todas</option>
-            <option v-for="(marca,index) in marcas" :key ="index" :value='marca'>{{marca}}</option>
+            
+            <optgroup label="Principales Marcas">
+                <option v-for="(marca,index) in marcas" :key ="index" :value='marca'>{{marca}}</option>
+            </optgroup>
+            
+            
       </select>
       <br>
     <label for="anchura">Anchura:</label>
