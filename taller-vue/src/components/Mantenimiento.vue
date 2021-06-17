@@ -7,7 +7,7 @@
         <li>Posición: {{mant.posicion_rueda}}</li>
         <li>Kilómetros: {{mant.kilometros}} km</li>
         <li>Rueda: {{mant.marca}} {{mant.modelo}}</li>
-        <li>Importe: {{mant.importe}}€</li>
+        <li>Importe: {{mant.importe}}€ </li>
         </ul>
 
 </div>

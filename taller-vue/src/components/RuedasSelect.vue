@@ -7,6 +7,7 @@
         <div class="col-3">
         <ul >
         <li> Marca: {{rod.marca}}</li>
+        <li> Modelo: {{rod.modelo}}</li>
         <li> Anchura: {{rod.anchura}}</li>
         <li> Perfil: {{rod.perfil}}</li>
         <li> Llanta: {{rod.llanta}}</li>
@@ -26,12 +27,14 @@
         <div class="imagen col-4" v-if="rod.marca=='Continental'">
             <img  class="logo" src="../assets/Continental.png">
         </div>
-        <div class="imagen col-4" v-if="rod.marca=='Pirelli'">
+        <div class="imagen col-4 img-responsive" v-if="rod.marca=='Pirelli'">
             <img  class="logo" src="../assets/Pirelli.png">
         </div>
 
         <form>
-            <input type="button" class="boton" id="borrar" value="Añadir a la cesta" @click="borrarJugador(jugador.id)">
+          <label for="cantidad">Nº Ruedas: </label>
+            <input type="number" name="cantidad" v-model.number="ruedas" required>
+          <input type="button" class="boton" id="borrar" value="calcular precio" @click="calcularPrecio(rod.precio)">
         </form>
         
     
@@ -48,11 +51,15 @@ export default {
   name: 'Datos',
     data(){
     return{
-        rueda:[]
+        rueda:[],
+        ruedas:""
     }
   },
 
   methods: {
+    calcularPrecio(n){
+      console.log(n*this.ruedas)
+    }
   },
   props:['filtro'],
   watch:{
@@ -83,6 +90,7 @@ export default {
 input[type="number"]{
   width: 50px;
   margin-bottom: 10px;
+  margin-left: 10px;
   border-radius: 6px;
     padding: 5px;
   font-weight: 50;

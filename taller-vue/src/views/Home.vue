@@ -42,7 +42,7 @@
       </form>    
 
     </div>      
-    <div class="row col-md-4" id="resultado" v-show="mostrar">
+    <div class="row col-md-5" id="resultado" v-show="mostrar">
       <RuedasSelec :filtro="ruedasFiltro" />
     </div>
     <div class="row col-md-5 img-responsive"  >

@@ -13,7 +13,7 @@
             <Venta/>
         </div>
         <div v-else-if="actividad=='insertarRuedas'" class="col-5">
-            /**insertar componente rueda */
+            <CrearRueda/>
         </div>
         <div v-else-if="actividad=='modificarRuedas'" class="col-5">
             /**insertar componente modificarRuedas */
@@ -33,6 +33,7 @@
 
 <script>
 import Venta from "../components/Venta.vue"
+import CrearRueda from "../components/CrearRueda.vue"
 import axios from "axios"
 export default {
   name: 'Trabajador',
@@ -55,7 +56,7 @@ export default {
 
   },
   components:{
-    Venta
+    Venta, CrearRueda
   },
 
 
