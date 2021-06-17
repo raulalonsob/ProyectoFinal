@@ -4,36 +4,43 @@
  
     <div class="d-flex justify-content-around col-md-12 col-lg-3">
       <form>
-      <h2>Elige tus neumaticos:</h2>
+      <h2>Elige Tus Neumáticos:</h2>
     <label for="marca">Marca:</label>
-      <select id="marca" v-model.lazy="busqueda.marca">
-        <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.marca" >{{rueda.marca}}</option>
+        <select id="marca" v-model="busqueda.marca" required>
+            <option :value="''" >Todas</option>
+            <option v-for="(marca,index) in marcas" :key ="index" :value='marca'>{{marca}}</option>
       </select>
       <br>
-        <label for="anchura">Anchura</label>
-      <select id="anchura" v-model.lazy="busqueda.anchura" >
-        <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.anchura" >{{rueda.anchura}}</option>
-      </select>
-      <br>
-        <label for="perfil">Perfil</label>
-      <select id="perfil" v-model.lazy="busqueda.perfil">
-        <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.perfil" >{{rueda.perfil}}</option>
-      </select>
-      <br>
-        <label for="llanta">Llanta</label>
-      <select id="llanta" v-model.lazy="busqueda.llanta" >
-        <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.llanta" >{{rueda.llanta}}</option>
-      </select>
-      <br>
-      <label for="carga">Carga</label>
-      <select id="carga" v-model.lazy="busqueda.carga">
-        <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.carga" >{{rueda.carga}}</option>
-      </select>
+    <label for="anchura">Anchura:</label>
+        <select id="marca" v-model.number="busqueda.anchura" required>
+          <option :value="''" >Todas</option>
+          <option v-for="(anchura,index) in anchuras" :key ="index" :value='anchura'>{{anchura}}</option>
+        </select>   
         <br>
-        <label for="velocidad">Velocidad</label>
-      <select id="velocidad" v-model.lazy="busqueda.velocidad" >
-        <option v-for="(rueda,index) in ruedas" :key ="index" :value="rueda.velocidad" >{{rueda.velocidad}}</option>
-      </select>
+    <label for="perfil">Perfil:</label>
+        <select id="perfil" v-model.number="busqueda.perfil" required>
+          <option :value="''" >Todos</option>
+          <option v-for="(perfil,index) in perfiles" :key ="index" :value='perfil'>{{perfil}}</option>
+        </select> 
+         <br>
+    <label for="llanta">Llanta:</label>
+        <select id="llanta" v-model.number="busqueda.llanta" required>
+          <option :value="''" >Todas</option>
+          <option v-for="(llanta,index) in llantas" :key ="index" :value='llanta'>{{llanta}}</option>
+        </select> 
+      <br>
+    <label for="carga">Carga:</label>
+        <select id="carga" v-model.number="busqueda.carga" required>
+          <option :value="''" >Todas</option>
+          <option v-for="(carga,index) in cargas" :key ="index" :value='carga'>{{carga}}</option>
+        </select>  
+    <br>
+    <label for="velocidad">Velocidad:</label>
+        <select id="velocidad" v-model="busqueda.velocidad" required>
+          <option :value="''" >Todas</option>
+          <option v-for="(velocidad,index) in velocidades" :key ="index" :value='velocidad'>{{velocidad}}</option>
+        </select> 
+    <br>
       <br>
       <div class="d-flex justify-content-around">
       <input type="button" class="boton" @click="mandar" value="Buscar">
@@ -67,6 +74,12 @@ export default {
   return{
       ruedas:[],
       ruedasFiltro:[],
+      marcas:["Michelin","Dunlop","Continental","Pirelli"],
+      anchuras:[135,145,155,165,175,185,195,205,215,225,235,245,255,265,275,285,295,305,315,325,335],
+      perfiles:[30,35,40,45,50,55,60,65,70,75],
+      llantas:[15,16,17,18,19,20,21,22],
+      cargas:[90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120],
+      velocidades:["H","R","S","T","V","W","Z",],
       busqueda:{
         marca: "",
         modelo: "",
