@@ -19,7 +19,7 @@
             <EliminarRueda/>
         </div>
         <div v-else-if="actividad=='anadirUsuario'" class="col-5">
-            /**insertar componente anadirUser */
+            <NuevoUser/>
         </div>
         <div v-else-if="actividad=='anadirVehiculo'" class="col-5">
             /**insertar componente añadir Vehiculo */
@@ -35,6 +35,7 @@
 import Venta from "../components/Venta.vue"
 import CrearRueda from "../components/CrearRueda.vue"
 import EliminarRueda from "../components/EliminarRueda.vue"
+import NuevoUser from"../components/NuevoUser.vue"
 export default {
   name: 'Trabajador',
 
@@ -56,7 +57,10 @@ export default {
 
   },
   components:{
-    Venta, CrearRueda, EliminarRueda
+    Venta, 
+    CrearRueda,
+    EliminarRueda, 
+    NuevoUser
   },
 
 

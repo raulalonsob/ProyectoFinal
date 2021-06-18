@@ -14,7 +14,7 @@ public class CalcularPrecioImpl implements ICalcularPrecio {
 	public String calcularPrecioMantenimiento(Integer num_ruedas, Integer id_rueda) {
 		String precio = ruedaRepo.findById(id_rueda).get().getPrecio();
 		
-		Double precioTotal = Double.parseDouble(precio)*num_ruedas;
+		Double precioTotal = Double.parseDouble(precio)*num_ruedas*1.21;
 		
 		
 		return String.valueOf(precioTotal);

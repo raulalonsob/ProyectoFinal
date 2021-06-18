@@ -4,8 +4,8 @@
 
         <form class="form-signin col-sm-12 col-md-5 col-xl-8" v-on:submit.prevent="mandar">
             <h1 class="form-signin-heading text-muted">Inicio Sesión</h1>
-            <input type="text" class="form-control" placeholder="Username" required autofocus="" v-model.lazy="usuario.username">
-            <input type="password" class="form-control" placeholder="Password" required v-model.lazy="usuario.password">    
+            <input type="text" class="form-control" placeholder="Usuario" required autofocus="" v-model.lazy="usuario.username">
+            <input type="password" class="form-control" placeholder="Contraseña" required v-model.lazy="usuario.password">    
             <div v-if="perfil.length==0" class="col-12">
                 <span class="error text-danger">Usuario o contraseña incorrectos</span>
             </div>

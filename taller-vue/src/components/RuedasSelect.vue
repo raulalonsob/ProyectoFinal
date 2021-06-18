@@ -4,7 +4,7 @@
   <div class="datos" v-if="rueda.length>0">
     
     <div class="row d-flex justify-content-start"  v-for="(rod,index) in rueda" :key="index">
-        <div class="col-3">
+        <div class="col-4">
         <ul >
         <li> Marca: {{rod.marca}}</li>
         <li> Modelo: {{rod.modelo}}</li>
