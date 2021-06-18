@@ -126,7 +126,6 @@ CREATE TABLE `users` (
   `email` varchar(100) DEFAULT NULL,
   `direccion` varchar(100) DEFAULT NULL,
   `domicilio` varchar(100) DEFAULT NULL,
-  `numero_ruedas` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_users`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   UNIQUE KEY `id_users_UNIQUE` (`id_users`)
@@ -139,7 +138,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'raul','123',1,'raul','alo','78787878X','alo@alo','nolahay','sala',0),(2,'marcos','456',0,'marcos','becerro','12121212B','ma@be','nolase','madrid',0),(3,'pedrolito','hola',0,'pedro','guti',NULL,NULL,NULL,NULL,0);
+INSERT INTO `users` VALUES (1,'raul','123',1,'raul','alo','78787878X','alo@alo','nolahay','sala'),(2,'marcos','456',0,'marcos','becerro','12121212B','ma@be','nolase','madrid'),(3,'pedrolito','hola',0,'pedro','guti',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
