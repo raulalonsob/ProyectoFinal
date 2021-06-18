@@ -24,6 +24,7 @@ public class VehiculoEntity {
 	
 	}
 	
+	
 	public VehiculoEntity(String matricula, String modelo, Integer id_users) {
 		super();
 		this.matricula = matricula;
