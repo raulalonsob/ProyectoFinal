@@ -5,7 +5,7 @@
         <form class="col-sm-12 col-md-6">
           <input type="button" class="boton" value="Nuevo Mantenimiento" @click="setActividad(venta)"><br>
           <input type="button" class="boton" value="Introducir Ruedas" @click="setActividad(inserRuedas)"><br>
-          <input type="button" class="boton" value="Modificar Ruedas" @click="setActividad(modifRuedas)"><br>
+          <input type="button" class="boton" value="Eliminar Ruedas" @click="setActividad(modifRuedas)"><br>
           <input type="button" class="boton" value="Añadir Usuario" @click="setActividad(anadirUser)"><br>
           <input type="button" class="boton" value="Añadir Vehículo" @click="setActividad(anadirVehiculo)"><br>  
         </form>
@@ -15,8 +15,8 @@
         <div v-else-if="actividad=='insertarRuedas'" class="col-5">
             <CrearRueda/>
         </div>
-        <div v-else-if="actividad=='modificarRuedas'" class="col-5">
-            /**insertar componente modificarRuedas */
+        <div v-else-if="actividad=='eliminarRuedas'" class="col-5">
+            <EliminarRueda/>
         </div>
         <div v-else-if="actividad=='anadirUsuario'" class="col-5">
             /**insertar componente anadirUser */
@@ -34,7 +34,7 @@
 <script>
 import Venta from "../components/Venta.vue"
 import CrearRueda from "../components/CrearRueda.vue"
-import axios from "axios"
+import EliminarRueda from "../components/EliminarRueda.vue"
 export default {
   name: 'Trabajador',
 
@@ -56,7 +56,7 @@ export default {
 
   },
   components:{
-    Venta, CrearRueda
+    Venta, CrearRueda, EliminarRueda
   },
 
 

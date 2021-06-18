@@ -50,7 +50,7 @@ export default {
         params: this.usuario
         }
         )
-        .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].username, console.log(this.usuar))// this.perfil= response.data
+        .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].username)// this.perfil= response.data
         );
     },
     cerrar(){

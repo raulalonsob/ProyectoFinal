@@ -3,6 +3,8 @@
 package com.raul.taller.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,6 +13,7 @@ import javax.persistence.Table;
 public class UserEntity {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_users")
 	private Integer id_users;
 	
@@ -41,11 +44,23 @@ public class UserEntity {
 	@Column(name = "domicilio")
 	private String domicilio;
 	
-	@Column(name = "numero_ruedas")
-	private Integer numero_ruedas;
+
 	
 	
-	
+
+	public UserEntity(String username, String password, Integer trabajador, String nombre, String apellidos, String dni,
+			String email, String direccion, String domicilio) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.trabajador = trabajador;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.dni = dni;
+		this.email = email;
+		this.direccion = direccion;
+		this.domicilio = domicilio;
+	}
 
 	public UserEntity(Integer id_users, String username, String password, String nombre, String apellidos) {
 		super();
@@ -57,7 +72,7 @@ public class UserEntity {
 	}
 
 	public UserEntity(Integer id_users, String username, String password, Integer trabajador, String nombre,
-			String apellidos, String dni, String email, String direccion, String domicilio, Integer numero_ruedas) {
+			String apellidos, String dni, String email, String direccion, String domicilio) {
 		super();
 		this.id_users = id_users;
 		this.username = username;
@@ -69,7 +84,7 @@ public class UserEntity {
 		this.email = email;
 		this.direccion = direccion;
 		this.domicilio = domicilio;
-		this.numero_ruedas = numero_ruedas;
+	
 	}
 
 	public UserEntity() {
@@ -156,13 +171,6 @@ public class UserEntity {
 		this.domicilio = domicilio;
 	}
 
-	public Integer getNumero_ruedas() {
-		return numero_ruedas;
-	}
-
-	public void setNumero_ruedas(Integer numero_ruedas) {
-		this.numero_ruedas = numero_ruedas;
-	}
 	
 	
 

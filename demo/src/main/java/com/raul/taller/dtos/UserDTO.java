@@ -32,7 +32,7 @@ public class UserDTO {
 		super();
 	}
 	public UserDTO(Integer id_users, String username, String password, Integer trabajador, String nombre, String apellidos,
-			String dni, String email, String direccion, String domicilio, Integer numero_ruedas) {
+			String dni, String email, String direccion, String domicilio) {
 		super();
 		this.id_users = id_users;
 		this.username = username;
@@ -44,7 +44,6 @@ public class UserDTO {
 		this.email = email;
 		this.direccion = direccion;
 		this.domicilio = domicilio;
-		this.numero_ruedas = numero_ruedas;
 	}
 	public Integer getId_users() {
 		return id_users;
@@ -106,15 +105,10 @@ public class UserDTO {
 	public void setDomicilio(String domicilio) {
 		this.domicilio = domicilio;
 	}
-	public Integer getNumero_ruedas() {
-		return numero_ruedas;
-	}
-	public void setNumero_ruedas(Integer numero_ruedas) {
-		this.numero_ruedas = numero_ruedas;
-	}
+
 	private String email;
 	private String direccion;
 	private String domicilio;
-	private Integer numero_ruedas;
+	
 
 }
