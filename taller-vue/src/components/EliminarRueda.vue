@@ -3,9 +3,9 @@
     <h1>Listado de Neumáticos:</h1><hr>
     <span v-show="ok" class="ok">*Rueda eliminada correctamente</span>
     <span v-show="errMatri" class="error">*Error, por favor intentelo de nuevo</span>
-  <div class="datos" v-if="ruedas.length>0">
+  <div  class="datos" v-if="ruedas.length>0">
     
-    <div class="row d-flex justify-content-start"  v-for="(rod,index) in ruedas" :key="index">
+    <div class="row d-flex justify-content-start" v-for="(rod,index) in ruedas" :key="index">
         <div class="col-6">
         <ul >
         <li> Marca: {{rod.marca}}</li>
@@ -44,9 +44,6 @@
         </div>
       </div>
 
-        
-    
-   <hr>
     </div><br>
 
     
@@ -90,19 +87,18 @@ export default {
 
 }
 </script>
-<style >
+<style scoped>
 .logo{
     height: 160px;
 }
 
 .datos{
 
-  font-weight: 50px;  
-      
+  font-weight: 50px;     
   width: 150%;
   text-align: left;  
 	padding-top: 20px;
-    padding-left: 2%;
+  padding-left: 2%;
   padding-bottom: 20px;
 
 }
@@ -138,5 +134,6 @@ form{
   color: forestgreen;
   font-size:20px ;
 }
+
 
 </style>

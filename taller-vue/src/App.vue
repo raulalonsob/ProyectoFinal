@@ -61,8 +61,8 @@ export default {
   
 }
 #tire{
-   -webkit-text-stroke: 1px rgb(14, 0, 92) ;
-   text-shadow: 3px 3px 3px rgb(69, 69, 97)
+   -webkit-text-stroke: 1px rgb(26, 36, 131) ;
+   text-shadow: 3px 3px 5px rgba(19, 19, 114, 0.87)
 
 }
 

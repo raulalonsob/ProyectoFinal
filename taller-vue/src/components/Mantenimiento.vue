@@ -30,8 +30,8 @@ export default {
   created() {
     axios.get("http://localhost:8080/taller/v1/mantenimiento?matricula="+this.matricula)
         .then((response) => {
-      this.mantenimientos=response.data
-      console.log(this.mantenimientos)}
+          this.mantenimientos=response.data
+          console.log(this.mantenimientos)}
   
         )
 
@@ -42,8 +42,8 @@ export default {
       matricula(matri){
       axios.get("http://localhost:8080/taller/v1/mantenimiento?matricula="+matri)
         .then((response) => {
-      this.mantenimientos=response.data
-      console.log(this.mantenimientos)}
+          this.mantenimientos=response.data
+          console.log(this.mantenimientos)}
   
         )
       },

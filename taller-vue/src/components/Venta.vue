@@ -71,9 +71,11 @@ export default {
         "posicion_rueda":this.mantenimiento.posicion_rueda,
         "id_ruedas":this.mantenimiento.id_ruedas})
 
-          .then(response=>{this.ok=true}).
+          .then(response=>{this.ok=true, this.errMatri=false}).
           catch(error=> {
-            this.errMatri=true
+            console.log(error.message)
+            this.errMatri=true,
+            this.ok=false
           } )
         
     },
