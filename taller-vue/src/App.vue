@@ -4,7 +4,7 @@
       <div class="col-md-5 col-lg-6" id="tire" >TireWheels</div>
       <div class="col-md-6 col-md-5 d-flex justify-content-around  align-self-end" id="nav">
         <router-link class="router" to="/">Inicio</router-link> 
-        <router-link class="router" to="/presentacion">¿Quiénes somos? </router-link>
+        <router-link class="router" to="/contacto">Contacto</router-link>
         <router-link class="router" to="/cuenta">Mi cuenta</router-link>
         <router-link class="router" to="/gestion">Gestión Taller</router-link>
       </div>
@@ -23,7 +23,6 @@
 </template>
 <script>
 import Footer from "./components/Footer.vue"
-import axios from "axios";
 export default {
     components: {
     Footer
@@ -80,16 +79,11 @@ export default {
 
 }
 
-
-
-
 #nav {
   padding-top: 4%;
   text-align: right;
   font-size:large;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   line-height: 30px;
-  
- /* border: solid 1px red;*/
 }
 </style>

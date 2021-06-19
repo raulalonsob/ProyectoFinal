@@ -3,54 +3,53 @@
     <div class="img-responsive d-md-none d-xl-block col-lg-3  " id=imagen><img alt="rueda" src="../assets/rueda.png" id="rueda"></div>
  
     <div class="d-flex justify-content-around col-md-12 col-lg-3">
-      <form>
+    <form>
       <h2>Elige Tus Neumáticos:</h2>
-    <label for="marca">Marca:</label>
-        <select id="marca" v-model="busqueda.marca" required>
-            <option :value="''" >Todas</option>
-            
-            <optgroup label="Principales Marcas">
-                <option v-for="(marca,index) in marcas" :key ="index" :value='marca'>{{marca}}</option>
-            </optgroup>
-            
-            
-      </select>
-      <br>
-    <label for="anchura">Anchura:</label>
-        <select id="marca" v-model.number="busqueda.anchura" required>
-          <option :value="''" >Todas</option>
-          <option v-for="(anchura,index) in anchuras" :key ="index" :value='anchura'>{{anchura}}</option>
-        </select>   
+      <label for="marca">Marca:</label>
+          <select id="marca" v-model="busqueda.marca" required>
+
+              <option :value="''" >Todas</option>
+              <optgroup label="Principales Marcas">
+                  <option v-for="(marca,index) in marcas" :key ="index" :value='marca'>{{marca}}</option>
+              </optgroup>
+                    
+        </select>
         <br>
-    <label for="perfil">Perfil:</label>
-        <select id="perfil" v-model.number="busqueda.perfil" required>
-          <option :value="''" >Todos</option>
-          <option v-for="(perfil,index) in perfiles" :key ="index" :value='perfil'>{{perfil}}</option>
-        </select> 
-         <br>
-    <label for="llanta">Llanta:</label>
-        <select id="llanta" v-model.number="busqueda.llanta" required>
-          <option :value="''" >Todas</option>
-          <option v-for="(llanta,index) in llantas" :key ="index" :value='llanta'>{{llanta}}</option>
-        </select> 
+      <label for="anchura">Anchura:</label>
+          <select id="marca" v-model.number="busqueda.anchura" required>
+            <option :value="''" >Todas</option>
+            <option v-for="(anchura,index) in anchuras" :key ="index" :value='anchura'>{{anchura}}</option>
+          </select>   
+          <br>
+      <label for="perfil">Perfil:</label>
+          <select id="perfil" v-model.number="busqueda.perfil" required>
+            <option :value="''" >Todos</option>
+            <option v-for="(perfil,index) in perfiles" :key ="index" :value='perfil'>{{perfil}}</option>
+          </select> 
+          <br>
+      <label for="llanta">Llanta:</label>
+          <select id="llanta" v-model.number="busqueda.llanta" required>
+            <option :value="''" >Todas</option>
+            <option v-for="(llanta,index) in llantas" :key ="index" :value='llanta'>{{llanta}}</option>
+          </select> 
+        <br>
+      <label for="carga">Carga:</label>
+          <select id="carga" v-model.number="busqueda.carga" required>
+            <option :value="''" >Todas</option>
+            <option v-for="(carga,index) in cargas" :key ="index" :value='carga'>{{carga}}</option>
+          </select>  
       <br>
-    <label for="carga">Carga:</label>
-        <select id="carga" v-model.number="busqueda.carga" required>
-          <option :value="''" >Todas</option>
-          <option v-for="(carga,index) in cargas" :key ="index" :value='carga'>{{carga}}</option>
-        </select>  
-    <br>
-    <label for="velocidad">Velocidad:</label>
-        <select id="velocidad" v-model="busqueda.velocidad" required>
-          <option :value="''" >Todas</option>
-          <option v-for="(velocidad,index) in velocidades" :key ="index" :value='velocidad'>{{velocidad}}</option>
-        </select> 
-    <br>
+      <label for="velocidad">Velocidad:</label>
+          <select id="velocidad" v-model="busqueda.velocidad" required>
+            <option :value="''" >Todas</option>
+            <option v-for="(velocidad,index) in velocidades" :key ="index" :value='velocidad'>{{velocidad}}</option>
+          </select> 
       <br>
-      <div class="d-flex justify-content-around">
-      <input type="button" class="boton" @click="mandar" value="Buscar">
-        <input type="button" class="boton" @click="limpiar" value="Limpiar">
-      </div>
+        <br>
+        <div class="d-flex justify-content-around">
+        <input type="button" class="boton" @click="mandar" value="Buscar">
+          <input type="button" class="boton" @click="limpiar" value="Limpiar">
+        </div>
       </form>    
 
     </div>      
@@ -64,9 +63,7 @@
 
 </template>
 
-
 <script>
- 
 
 import axios from "axios"
 import RuedasSelec from "../components/RuedasSelect.vue"
@@ -177,19 +174,19 @@ form select{
 form input[type="button"]{
   margin-top: 5%;
 }
-  .boton{
-    text-decoration: none;
-    padding: 5px;
-    font-weight: 600;
-    font-size: 18px;
-    color: #fffdfd;
+.boton{
+  text-decoration: none;
+  padding: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fffdfd;
   background-color: #395766;
   border-radius: 6px;
   border: 2px solid #253b4d;
-  }
-  .boton:hover{
-    color:#0a6897;
-    background-color: #ffffff;
-  }
+}
+.boton:hover{
+  color:#0a6897;
+  background-color: #ffffff;
+}
 
 </style>
