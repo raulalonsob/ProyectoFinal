@@ -3,21 +3,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
 	<div class="footer-basic">
-        <footer>
-            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">About</a></li>
-                <li class="list-inline-item"><a href="https://www.masquenegocio.com/2016/05/16/ecommerce-pagina-web/">Terms</a></li>
-                <li class="list-inline-item"><a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal">Privacy Policy</a></li>
-            </ul>
-            <p class="copyright">TirewheelsCompany © 2021</p>
-        </footer>
+      <footer>
+          <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+          <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">About</a></li>
+              <li class="list-inline-item"><a href="https://www.masquenegocio.com/2016/05/16/ecommerce-pagina-web/">Terms</a></li>
+              <li class="list-inline-item"><a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal">Privacy Policy</a></li>
+          </ul>
+          <p class="copyright">TirewheelsCompany © 2021</p>
+      </footer>
     </div>
 </template>
-<script>
-
-    
-</script>
 
 
 <style scoped>

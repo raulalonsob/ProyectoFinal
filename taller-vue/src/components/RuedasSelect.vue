@@ -59,19 +59,14 @@
             </div>
           </div>
         </div>
-      </div>
-
-        
-    
-   <hr>
-    </div><br>
+        </div>
+    </div>
 
     
   </div><spam v-else><h3>No hay resultados con esas caracteristicas</h3></spam></div>
 </template>
 
 <script>
-import axios from "axios"
 export default {
   name: 'Datos',
     data(){
@@ -93,37 +88,30 @@ export default {
   watch:{
     filtro(n){
       this.rueda=n;
-    },
-    ruedas(nueva){
-
     }
   }
-    
-
 }
 </script>
+
 <style >
 .logo{
     height: 160px;
 }
 
 .datos{
-
-  font-weight: 50px;  
-      
+  font-weight: 50px;     
   width: 150%;
   text-align: left;  
 	padding-top: 20px;
-    padding-left: 2%;
+  padding-left: 2%;
   padding-bottom: 20px;
-
 }
 input[type="number"]{
   width: 50px;
   margin-bottom: 10px;
   margin-left: 10px;
   border-radius: 6px;
-    padding: 5px;
+  padding: 5px;
   font-weight: 50;
   font-size: 15px;
 }

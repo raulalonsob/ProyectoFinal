@@ -18,12 +18,14 @@
     <input type="button" class="btn btn-lg btn-primary btn-block" value="Cerrar Sesión" @click="cerrar">	
 	
   </form>
-    <div v-if="perfil.length==1" class="col-md-6 col-sm-12">
-          <Cliente :usuario="usuar"/>
-    </div>
-    <div v-else class="col-xl-2 col-md-7 align-self-rigth" id="log" >
-      <img alt="log" src="../assets/login.png" id="log">
-    </div>
+
+  <div v-if="perfil.length==1" class="col-md-6 col-sm-12">
+    <Cliente :usuario="usuar"/>
+  </div>
+
+  <div v-else class="col-xl-2 col-md-7 align-self-rigth" id="log" >
+    <img alt="log" src="../assets/login.png" id="log">
+  </div>
 
 </div>
 </template>
@@ -35,13 +37,13 @@ export default {
 
   data(){
     return{
-        perfil:[2,2],
-        usuar:"",
-        usuario:{
-        username: "",
-        password: "",
-        trabajador:"0",
-        },
+      perfil:[2,2],
+      usuar:"",
+      usuario:{
+      username: "",
+      password: "",
+      trabajador:"0",
+      },
     } 
   },
   components: {
@@ -50,10 +52,8 @@ export default {
   methods: {
     mandar(){
       axios.get("http://localhost:8080/taller/v1/users",{
-      params: this.usuario
-      }
-      )
-      .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].id_users)// this.perfil= response.data
+      params: this.usuario})
+      .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].id_users)
       );
     },
     cerrar(){
@@ -61,8 +61,6 @@ export default {
       this.usuar=""
     }
   }
-
-   
 }
 </script>
 

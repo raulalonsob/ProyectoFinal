@@ -3,13 +3,11 @@
     <form v-on:submit.prevent="aceptar">
       <h2>Insertar nueva rueda:</h2>
     <label for="marca">Marca:</label>
-
         <input type="text" name="modelo" v-model="nueva.marca" required>
-
-      <br>
+        <br>
     <label for="modelo">Modelo:</label>
         <input type="text" name="modelo" v-model="nueva.modelo" required>
-      <br>
+        <br>
     <label for="anchura">Anchura:</label>
         <select id="marca" v-model.number="nueva.anchura" required>
             <option v-for="(anchura,index) in anchuras" :key ="index" :value='anchura'>{{anchura}}</option>
@@ -126,19 +124,19 @@ export default {
 <style scoped>
 
 form{
-    min-width: 300px;
+  min-width: 300px;
 	padding:16px;
 	border-radius:10px;
 	margin:auto;
 	background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
-    margin-bottom:3%;
+  margin-bottom:3%;
   
 }
 input[type="radio"]{
-margin-left: 5%;
+  margin-left: 5%;
 }
 input[type="text"]{
-    width:200px;
+  width:200px;
 	padding:3px 10px;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
@@ -147,20 +145,18 @@ input[type="text"]{
 	display:inline-block;
 }
 input[type="date"]{
-    width:200px;
+  width:200px;
 	padding:3px 10px;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
 	background-color:#f6f6f6;
 	margin:8px 0;
 	display:inline-block;
-
 }
 
 form label{
 	width:100px;
-    font: bold;
-
+  font: bold;
 }
 form select{
 	width:200px;
@@ -180,7 +176,7 @@ input[type="number"]{
   margin-bottom: 10px;
   border:1px solid #f6f6f6;
   border-radius: 6px;
-    padding: 5px;
+  padding: 5px;
   font-weight: 50;
   font-size: 15px;
 }

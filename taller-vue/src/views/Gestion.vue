@@ -5,7 +5,8 @@
         <form class="form-signin col-sm-12 col-md-5 col-xl-8" v-on:submit.prevent="mandar">
             <h1 class="form-signin-heading text-muted">Inicio Sesión</h1>
             <input type="text" class="form-control" placeholder="Usuario" required autofocus="" v-model.lazy="usuario.username">
-            <input type="password" class="form-control" placeholder="Contraseña" required v-model.lazy="usuario.password">    
+            <input type="password" class="form-control" placeholder="Contraseña" required v-model.lazy="usuario.password">   
+
             <div v-if="perfil.length==0" class="col-12">
                 <span class="error text-danger">Usuario o contraseña incorrectos</span>
             </div>
@@ -17,9 +18,8 @@
         </div>
     
     </div>
+
     <div v-else class="container row ">
-          
-    
         <Trabajador :usuario="usuar" /><input type="button" class="boton " id="borrar" value="Cerrar Sesión" @click="cerrar">
     </div>
 </template>
@@ -28,38 +28,31 @@ import Trabajador from "../components/Trabajador.vue"
 import axios from "axios"
 export default {
   name: 'Gestion',
-
   data(){
   return{
-      perfil:[2,2],
-      usuar:"mostrar",
-      usuario:{
-        username: "",
-        password: "",
-        trabajador:"1",
-
-      },
+    perfil:[2,2],
+    usuar:"mostrar",
+    usuario:{
+      username: "",
+      password: "",
+      trabajador:"1",
+    },
   } 
   },
   components: {
    Trabajador
-   },
+  },
     methods: {
-    mandar(){
-        axios.get("http://localhost:8080/taller/v1/users",{
-        params: this.usuario
-        }
-        )
-        .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].username)// this.perfil= response.data
-        );
-    },
-    cerrar(){
-
-        this.usuar="mostrar"
+  mandar(){
+      axios.get("http://localhost:8080/taller/v1/users",{
+      params: this.usuario})
+      .then(response => (this.perfil=response.data, this.usuar=this.perfil[0].username));
+  },
+  cerrar(){
+      this.usuar="mostrar"
+  }
     }
-    }
-
-   
+ 
 }
 </script>
 

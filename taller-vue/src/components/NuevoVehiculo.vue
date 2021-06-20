@@ -50,14 +50,13 @@ export default {
         axios.post('http://localhost:8080/taller/v1/vehiculos', {  
             "matricula":this.nuevo.matricula,
             "modelo":this.nuevo.modelo,
-            "id_users":this.nuevo.id_users
-            })
+            "id_users":this.nuevo.id_users})
             .then(response=>{this.ok=true, this.errMatri=false}).
             catch(error=> {
                 console.log(error.message)
                 this.errMatri=true,
                 this.ok=false
-            } )
+            })
             
         },
         cancelar(){
@@ -94,7 +93,7 @@ form{
   
 }
 input[type="radio"]{
-margin-left: 5%;
+    margin-left: 5%;
 }
 input[type="text"]{
     width:200px;

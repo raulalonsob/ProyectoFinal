@@ -6,12 +6,12 @@
     <form>
       <h2>Elige Tus Neumáticos:</h2>
       <label for="marca">Marca:</label>
-          <select id="marca" v-model="busqueda.marca" required>
+        <select id="marca" v-model="busqueda.marca" required>
 
-              <option :value="''" >Todas</option>
-              <optgroup label="Principales Marcas">
-                  <option v-for="(marca,index) in marcas" :key ="index" :value='marca'>{{marca}}</option>
-              </optgroup>
+          <option :value="''" >Todas</option>
+          <optgroup label="Principales Marcas">
+              <option v-for="(marca,index) in marcas" :key ="index" :value='marca'>{{marca}}</option>
+          </optgroup>
                     
         </select>
         <br>
@@ -50,7 +50,7 @@
         <input type="button" class="boton" @click="mandar" value="Buscar">
           <input type="button" class="boton" @click="limpiar" value="Limpiar">
         </div>
-      </form>    
+    </form>    
 
     </div>      
     <div class="row col-md-5" id="resultado" v-show="mostrar">

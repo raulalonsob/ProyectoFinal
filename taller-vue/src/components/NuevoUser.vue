@@ -3,35 +3,32 @@
     <form v-on:submit.prevent="aceptar">
       <h2>Insertar Usuario:</h2>
     <label for="username">Username:</label>
-
         <input type="text" name="username" v-model="nuevo.username" required>
-
       <br>
     <label for="contraseña">Contraseña:</label>
         <input type="text" name="contraseña" v-model="nuevo.password" required>
       <br>
     <label for="nombre">Nombre:</label>
-         <input type="text" name="nombre" v-model="nuevo.nombre" required>
-         <br>
+        <input type="text" name="nombre" v-model="nuevo.nombre" required>
+        <br>
     <label for="apellidos">Apellidos:</label>
-            <input type="text" name="apellidos" v-model="nuevo.apellidos" required>
-      <br>
+        <input type="text" name="apellidos" v-model="nuevo.apellidos" required>
+        <br>
     <label for="dni">DNI:</label>
-         <input type="text" name="dni" v-model="nuevo.dni" pattern="[0-9]{8}[A-Z]{1}" >
-    <br>
+        <input type="text" name="dni" v-model="nuevo.dni" pattern="[0-9]{8}[A-Z]{1}" >
+        <br>
     <label for="email">Email:</label>
-         <input type="mail" name="email:" v-model="nuevo.email" >
-    <br>
+        <input type="mail" name="email:" v-model="nuevo.email" >
+        <br>
     <label for="direccion">Direccion:</label>
         <input type="text" name="direccion" v-model="nuevo.direccion" >
     <br>
     <label for="domicilio">Domicilio:</label>
         <input type="text" name="domicilio" v-model="nuevo.domicilio" >
-
-    <br><label for="trabajador">Empleado</label>
-    <input type="checkbox" name="trabajador" true-value=1 false-value=0 v-model.number="nuevo.trabajador">
+        <br>
+    <label for="trabajador">Empleado</label>
+        <input type="checkbox" name="trabajador" true-value=1 false-value=0 v-model.number="nuevo.trabajador">
     
-
     <div class="d-flex justify-content-around">
         <input type="submit" class="boton" value="Aceptar">
         <input type="button" class="boton"  value="Cancelar" @click="cancelar">
@@ -108,19 +105,19 @@ export default {
 <style scoped>
 
 form{
-    min-width: 300px;
+  min-width: 300px;
 	padding:16px;
 	border-radius:10px;
 	margin:auto;
 	background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
-    margin-bottom:3%;
+  margin-bottom:3%;
   
 }
 input[type="radio"]{
-margin-left: 5%;
+  margin-left: 5%;
 }
 input[type="text"]{
-    width:200px;
+  width:200px;
 	padding:3px 10px;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
@@ -129,7 +126,7 @@ input[type="text"]{
 	display:inline-block;
 }
 input[type="mail"]{
-    width:200px;
+  width:200px;
 	padding:3px 10px;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
@@ -138,7 +135,7 @@ input[type="mail"]{
 	display:inline-block;
 }
 input[type="date"]{
-    width:200px;
+  width:200px;
 	padding:3px 10px;
 	border:1px solid #f6f6f6;
 	border-radius:3px;
@@ -150,7 +147,7 @@ input[type="date"]{
 
 form label{
 	width:100px;
-    font: bold;
+  font: bold;
 
 }
 form select{
@@ -171,7 +168,7 @@ input[type="number"]{
   margin-bottom: 10px;
   border:1px solid #f6f6f6;
   border-radius: 6px;
-    padding: 5px;
+  padding: 5px;
   font-weight: 50;
   font-size: 15px;
 }

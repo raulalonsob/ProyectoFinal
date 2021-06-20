@@ -42,7 +42,7 @@
             </div>
           </div>
         </div>
-      </div>
+        </div>
 
     </div><br>
 
@@ -69,27 +69,30 @@ export default {
       this.rueda=ru
     },
     eliminar(){
-        axios.delete('http://localhost:8080/taller/v1/ruedas/'+this.rueda, console.log(this.rueda))
-        .then(response=>{this.ok=true,
+      axios.delete('http://localhost:8080/taller/v1/ruedas/'+this.rueda, console.log(this.rueda))
+      .then(response=>{
+        this.ok=true,
         axios.get("http://localhost:8080/taller/v1/ruedas")
         .then(response => {this.ruedas = response.data})
-        }).
-        catch(error=> {
-            this.errMatri=true
-          } )
-        
+      })
+      .catch(error=> {
+        this.errMatri=true
+      })
     }
   },
-    created() {
-        axios.get("http://localhost:8080/taller/v1/ruedas")
-        .then(response => {this.ruedas = response.data})
+
+  created() {
+      axios.get("http://localhost:8080/taller/v1/ruedas")
+      .then(response => {this.ruedas = response.data})
   }
 
 }
+
 </script>
+
 <style scoped>
 .logo{
-    height: 160px;
+  height: 160px;
 }
 
 .datos{
@@ -134,6 +137,5 @@ form{
   color: forestgreen;
   font-size:20px ;
 }
-
 
 </style>

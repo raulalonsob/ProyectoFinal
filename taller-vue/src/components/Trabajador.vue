@@ -80,11 +80,11 @@ form input[type="button"]{
   width: 250px;
 }
 .boton{
-    text-decoration: none;
-    padding: 5px;
-    font-weight: 600;
-    font-size: 18px;
-    color: #fffdfd;
+  text-decoration: none;
+  padding: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fffdfd;
   background-color: #395766;
   border-radius: 6px;
   border: 2px solid #253b4d;
@@ -94,20 +94,17 @@ form input[type="button"]{
     background-color: #ffffff;
   }
 
-  .resultado{
+.resultado{
   margin-left: 30px;
   padding-top: 1%;
   min-width: 400px;
   height: 500px;
   overflow-x:hidden ;
   overflow-y:auto;
-	border-radius:10px;
+  border-radius:10px;
   padding-left: 1%;
-
-background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
-  
-
-}
+  background:linear-gradient(15deg, #b5b6bbad 10%, #e8eeee );
+  }
 
 
 
