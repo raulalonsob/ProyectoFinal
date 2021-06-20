@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.raul.taller.daos.MantenimientoDAO;
 import com.raul.taller.dtos.MantenimientoDTO;
 import com.raul.taller.dtos.MantenimientoRequestDTO;
-import com.raul.taller.dtos.RuedaDTO;
 import com.raul.taller.entities.MantenimientoEntity;
 import com.raul.taller.repositorios.MantenimientoRepository;
 

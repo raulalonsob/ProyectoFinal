@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.raul.taller.daos.UserDAO;
 
 import com.raul.taller.dtos.UserDTO;
-import com.raul.taller.entities.RuedaEntity;
 import com.raul.taller.entities.UserEntity;
 import com.raul.taller.repositorios.UserRepository;
 
@@ -49,7 +48,7 @@ public class UserRestController {
 	}
 	
 	
-	
+	//Isertar un nuevo usuario
 	@PostMapping("/users")
 	public ResponseEntity<?> insertarUser(@RequestBody UserEntity user){
 		userRepos.save(user);

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.raul.taller.daos.VehiculoDAO;
 import com.raul.taller.dtos.VehiculoDTO;
-import com.raul.taller.entities.RuedaEntity;
 import com.raul.taller.entities.VehiculoEntity;
 import com.raul.taller.repositorios.VehiculoRepository;
 @Service
