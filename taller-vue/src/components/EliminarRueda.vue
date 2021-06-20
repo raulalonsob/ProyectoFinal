@@ -72,11 +72,13 @@ export default {
       axios.delete('http://localhost:8080/taller/v1/ruedas/'+this.rueda, console.log(this.rueda))
       .then(response=>{
         this.ok=true,
+        this.error=false
         axios.get("http://localhost:8080/taller/v1/ruedas")
         .then(response => {this.ruedas = response.data})
       })
       .catch(error=> {
         this.errMatri=true
+        this.ok=false
       })
     }
   },
