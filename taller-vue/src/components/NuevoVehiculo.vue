@@ -2,7 +2,7 @@
 <div>
     <form v-on:submit.prevent="aceptar">
 
-    <h2>Insertar Usuario:</h2>
+    <h2>Insertar Vehículo:</h2>
 
     <label for="matricula" >Matrícula:</label>
         <input type="text" name="matricula" v-model="nuevo.matricula" required pattern="[0-9]{4}[BCDFGHJKLMNPRSTVWXYZ]{3}|[A-Z]{2}[0-9]{4}[A-Z]{2}|[A-Z]{1}[0-9]{4}[A-Z]{2}|[A-Z]{1}[0-9]{4}[A-Z]{1}|[A-Z]{2}[0-9]{4}[A-Z]{1}|[A-Z]{3}[0-9]{4}[A-Z]{2}|[A-Z]{3}[0-9]{1,4}[A-Z]{1}|" >
